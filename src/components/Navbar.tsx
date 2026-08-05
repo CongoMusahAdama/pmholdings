@@ -120,7 +120,7 @@ export default function Navbar() {
                     end={page.to === '/'}
                     className={`inline-flex items-center gap-1 whitespace-nowrap px-3 py-2 text-[0.78rem] font-semibold uppercase tracking-[0.06em] transition-colors xl:px-3.5 ${
                       isActive || isOpen
-                        ? 'bg-white text-ink'
+                        ? 'nav-chip bg-white text-ink'
                         : 'text-ink hover:bg-white/25'
                     }`}
                   >
@@ -179,7 +179,7 @@ export default function Navbar() {
 
           <Link
             to="/contact"
-            className="inline-flex shrink-0 items-center bg-white px-5 py-2.5 text-[0.75rem] font-bold uppercase tracking-[0.08em] text-ink transition-colors hover:bg-ink hover:text-white"
+            className="nav-chip inline-flex shrink-0 items-center bg-white px-5 py-2.5 text-[0.75rem] font-bold uppercase tracking-[0.08em] text-ink transition-colors hover:bg-ink hover:text-white"
           >
             Book Now
           </Link>
