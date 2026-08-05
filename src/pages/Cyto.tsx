@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom'
 import {
   Mic2,
-  Radio,
-  Shirt,
+  Music2,
   MapPin,
   Sparkles,
   Users,
   GraduationCap,
   CheckCircle2,
+  Disc3,
 } from 'lucide-react'
 import SEO from '../components/SEO'
 import ScrollReveal, { StaggerGroup, StaggerItem } from '../components/ScrollReveal'
@@ -17,19 +17,19 @@ import CTA from '../components/CTA'
 const pillars = [
   {
     title: 'Groom',
-    body: 'Shape presence, discipline, and professional standards — so raw talent looks and carries itself like industry.',
+    body: 'Shape voice, image, and discipline — so raw musical gift shows up like a real artiste.',
     icon: Sparkles,
     tone: 'gold' as const,
   },
   {
     title: 'Mentor',
-    body: 'One-on-one guidance from The Finest MC — stagecraft, brand, ethics, and the decisions that build careers.',
+    body: 'One-on-one guidance from PM — song craft, brand, ethics, and the decisions that build music careers.',
     icon: Users,
     tone: 'ink' as const,
   },
   {
     title: 'Train',
-    body: 'Structured practice through The Finest MasterClass — voice, crowd control, monetisation, and craft readiness.',
+    body: 'Structured practice for singers and music artistes — vocal readiness, performance, and industry polish.',
     icon: GraduationCap,
     tone: 'white' as const,
   },
@@ -37,37 +37,37 @@ const pillars = [
 
 const focus = [
   {
-    title: 'MCs & Hypemen',
-    body: 'Technique, presence, music sense, and professional standards.',
+    title: 'Singers & Vocalists',
+    body: 'Purposeful development for singing and recorded music — not MC work.',
     icon: Mic2,
     image: '/images/talent4.jpg',
   },
   {
-    title: 'Public Speakers',
-    body: 'Voice, personality, and audience command — on and off the field.',
-    icon: Radio,
+    title: 'Music Artistes',
+    body: 'Songwriting, performance, and artiste branding built for a real catalogue.',
+    icon: Music2,
     image: '/images/talent3.jpg',
   },
   {
-    title: 'Creatives & Models',
-    body: 'Brand visibility, discipline, and pathways into paid work.',
-    icon: Shirt,
+    title: 'Recording Path',
+    body: 'From incubation to signed deals — releases, videos, and career management.',
+    icon: Disc3,
     image: '/images/talent23.jpg',
   },
   {
     title: 'Western Region Focus',
-    body: 'Strengthening Ghana’s creative industry where PM is rooted.',
+    body: 'Growing Ghana’s music scene where PM is rooted — starting at home.',
     icon: MapPin,
     image: '/images/talent67.jpg',
   },
 ]
 
 const checklist = [
-  'Stage presence & performance polish',
-  'Personal brand & visibility',
-  'Public speaking & crowd command',
-  'Ethics of the craft',
-  'Monetisation pathways',
+  'Vocal & performance polish',
+  'Song craft & music identity',
+  'Artiste brand & visibility',
+  'Ethics of the music business',
+  'Release & monetisation pathways',
   'Industry introductions & debuts',
 ]
 
@@ -88,14 +88,14 @@ export default function Cyto() {
     <>
       <SEO
         title="Cyto Records"
-        description="Cyto Records — we groom, mentor, and train young professionals. Talent incubation by Nana Quasi-Wusu (PM). Talent rules. Passion conquers."
+        description="Cyto Records — music-first talent house by Nana Quasi-Wusu (PM). We develop singers and music artistes purposefully for music — not MC work. Talent rules. Passion conquers."
       />
 
       {/* Hero */}
       <section className="relative min-h-[48svh] overflow-hidden bg-ink md:min-h-[52svh]">
         <img
           src="/images/talent7.jpg"
-          alt="Cyto Records — grooming and mentoring young professionals"
+          alt="Cyto Records — music talent incubation with Nana Quasi-Wusu (PM)"
           className="absolute inset-0 h-full w-full object-cover"
           style={{ objectPosition: 'center 22%' }}
         />
@@ -103,19 +103,22 @@ export default function Cyto() {
 
         <div className="site-container relative z-10 flex min-h-[48svh] flex-col justify-end pb-10 pt-20 sm:pb-12 sm:pt-24 md:min-h-[52svh] md:pb-14 md:pt-28">
           <ScrollReveal className="max-w-3xl">
+            <p className="mb-3 text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-gold">
+              Cyto Records · Music First
+            </p>
             <h1 className="font-sans text-[1.85rem] font-bold leading-[1.12] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-[3.5rem]">
-              We groom, mentor, and train young professionals.
+              We develop singers and music artistes.
             </h1>
             <p className="mt-4 max-w-xl text-sm font-light leading-relaxed text-white/80 sm:mt-5 sm:text-base md:text-lg">
-              Talent rules. Passion conquers. Cyto turns raw gift into career-ready craft —
-              guided by The Finest MC.
+              Talent rules. Passion conquers. Cyto is purposeful music development — singing,
+              song craft, and artiste careers — not MC training.
             </p>
             <div className="action-row mt-8">
-              <Link to="/contact" className="btn-primary gap-2">
+              <Link to="/contact" className="btn-primary">
                 Apply to Join
               </Link>
-              <a href="#process" className="btn-ghost-light gap-2">
-                See the Roadmap
+              <a href="#artiste" className="btn-ghost-light">
+                Meet Tinuabrus
               </a>
             </div>
           </ScrollReveal>
@@ -184,7 +187,7 @@ export default function Cyto() {
             </StaggerItem>
             <StaggerItem>
               <h2 className="font-sans text-3xl font-bold leading-tight tracking-tight text-ink md:text-4xl">
-                Building career-ready communicators
+                Building career-ready music artistes
               </h2>
             </StaggerItem>
             <StaggerItem>
@@ -193,13 +196,14 @@ export default function Cyto() {
             <StaggerItem>
               <div className="space-y-4 text-base font-light leading-relaxed text-muted">
                 <p>
-                  Cyto Records is Nana Quasi-Wusu’s talent incubation house — where young
-                  professionals are groomed, mentored, and trained for real industry work. Not
+                  Cyto Records is Nana Quasi-Wusu’s music incubation house — where singers and
+                  music artistes are groomed, mentored, and trained for real industry work. Not
                   hobby energy. Professional standards.
                 </p>
                 <p>
-                  From MCs and hypemen to speakers and creatives, Cyto invests in people who want
-                  careers — especially across Ghana’s Western Region and beyond.
+                  This lane is purposefully for music — singing, songs, and artiste careers. MC
+                  and hypeman development lives under PM Entertainment and The Finest MasterClass,
+                  not Cyto.
                 </p>
               </div>
             </StaggerItem>
@@ -263,8 +267,8 @@ export default function Cyto() {
             </ScrollReveal>
             <ScrollReveal delay={0.08} className="lg:col-span-5">
               <p className="text-base font-light text-muted">
-                Young professionals across four lanes — each groomed and trained to industry
-                standard.
+                Music lanes only — singers and artistes groomed for releases, stages, and lasting
+                careers.
               </p>
             </ScrollReveal>
           </div>
@@ -295,18 +299,81 @@ export default function Cyto() {
         </div>
       </section>
 
+      {/* Tinuabrus — music artiste spotlight */}
+      <section id="artiste" className="bg-off py-16 md:py-24">
+        <div className="site-container grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
+          <ScrollReveal className="lg:col-span-6">
+            <div className="overflow-hidden rounded-[1.5rem]">
+              <img
+                src="/images/talent1.jpg"
+                alt="Tinuabrus — Cyto Records music artiste developed for singing"
+                className="aspect-[4/5] w-full object-cover md:aspect-[5/6]"
+                style={{ objectPosition: 'center 25%' }}
+              />
+            </div>
+          </ScrollReveal>
+
+          <StaggerGroup className="lg:col-span-6" stagger={0.08}>
+            <StaggerItem>
+              <p className="eyebrow mb-3">Artiste Spotlight</p>
+            </StaggerItem>
+            <StaggerItem>
+              <h2 className="font-sans text-3xl font-bold leading-tight tracking-tight text-ink md:text-4xl">
+                Tinuabrus
+              </h2>
+            </StaggerItem>
+            <StaggerItem>
+              <div className="my-5 gold-divider" />
+            </StaggerItem>
+            <StaggerItem>
+              <div className="space-y-4 text-base font-light leading-relaxed text-muted">
+                <p>
+                  With Tinuabrus, the work is purposeful music development — singing, songs, and
+                  artiste identity. Not MC training.
+                </p>
+                <p>
+                  Cyto invests in the music lane: voice, craft, brand, and the path from incubation
+                  to signed career management under Cyto and PM Entertainment.
+                </p>
+              </div>
+            </StaggerItem>
+            <StaggerItem>
+              <ul className="mt-6 space-y-2.5 text-sm text-ink/85">
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-gold" strokeWidth={1.75} />
+                  Developed as a music artiste / singer
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-gold" strokeWidth={1.75} />
+                  Mentored for songs, performance, and artiste brand
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-gold" strokeWidth={1.75} />
+                  MC &amp; hypeman lanes stay with PM Entertainment
+                </li>
+              </ul>
+            </StaggerItem>
+            <StaggerItem>
+              <Link to="/contact" className="btn-primary mt-8">
+                Inquire About Cyto
+              </Link>
+            </StaggerItem>
+          </StaggerGroup>
+        </div>
+      </section>
+
       {/* Talent gallery */}
-      <section id="talent" className="bg-off py-16 md:py-24">
+      <section id="talent" className="bg-white py-16 md:py-24">
         <div className="site-container">
           <ScrollReveal className="mx-auto mb-10 max-w-2xl text-center md:mb-12">
             <p className="mb-3 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold">
               In the Room
             </p>
             <h2 className="font-sans text-3xl font-bold tracking-tight text-ink md:text-4xl">
-              Young professionals in training
+              Moments from the music process
             </h2>
             <p className="mt-3 text-base font-light text-muted">
-              Real sessions. Real mentees. Cyto grooming the next generation.
+              Real sessions. Real music talent. Cyto grooming the next generation of artistes.
             </p>
           </ScrollReveal>
 
@@ -339,7 +406,7 @@ export default function Cyto() {
             <div className="overflow-hidden">
               <img
                 src="/images/talent.jpg"
-                alt="PM mentoring a young professional"
+                alt="PM mentoring music talent under Cyto Records"
                 className="aspect-[4/3] w-full object-cover"
                 style={{ objectPosition: 'center 30%' }}
               />
@@ -353,22 +420,23 @@ export default function Cyto() {
             </StaggerItem>
             <StaggerItem>
               <h2 className="font-sans text-3xl font-bold tracking-tight text-white md:text-4xl">
-                Guided by The Finest MasterClass
+                Guided for music careers
               </h2>
             </StaggerItem>
             <StaggerItem>
               <p className="mt-4 max-w-xl text-base font-light leading-relaxed text-white/70">
-                Cyto’s training lane draws from PM’s MasterClass method — stagecraft, monetisation,
-                brand visibility, and ethics. We build professionals, not hobbyists.
+                Cyto’s lane is music — vocal craft, performance, brand visibility, releases, and
+                ethics of the business. Looking for MC or hypeman training? That’s The Finest
+                MasterClass under PM Entertainment.
               </p>
             </StaggerItem>
             <StaggerItem>
               <div className="action-row mt-7">
-                <Link to="/pm-entertainment#masterclass" className="btn-primary">
-                  About MasterClass
-                </Link>
-                <Link to="/contact" className="btn-ghost-light">
+                <Link to="/contact" className="btn-primary">
                   Apply Now
+                </Link>
+                <Link to="/pm-entertainment#masterclass" className="btn-ghost-light">
+                  MC MasterClass
                 </Link>
               </div>
             </StaggerItem>
@@ -377,8 +445,8 @@ export default function Cyto() {
       </section>
 
       <CTA
-        title="Ready to be trained?"
-        subtitle="Apply to Cyto Records — grooming, mentorship, and professional training for the next generation."
+        title="Ready for a music career?"
+        subtitle="Apply to Cyto Records — purposeful grooming and mentorship for singers and music artistes."
         primaryLabel="Apply / Inquire"
         primaryTo="/contact"
         secondaryLabel="PM Entertainment"

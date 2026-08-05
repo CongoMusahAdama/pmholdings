@@ -146,17 +146,10 @@ export default function Hero({
               ))}
             </motion.h1>
 
-            <motion.div
-              className="mt-4 h-[2px] origin-left bg-gold md:mt-5"
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 0.85, delay: 0.55, ease }}
-            />
-
             <motion.p
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.7, ease }}
+              transition={{ duration: 0.7, delay: 0.55, ease }}
               className="mt-4 max-w-md text-sm font-light leading-relaxed text-white md:mt-5 md:text-base"
             >
               {subtitle}

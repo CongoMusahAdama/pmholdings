@@ -184,35 +184,44 @@ export default function Blacklaa() {
       </section>
 
       {/* Goal strips */}
-      <section id="goals" className="grid sm:grid-cols-2 lg:grid-cols-4">
-        {goals.map((goal, i) => {
-          const tones = ['bg-gold text-ink', 'bg-ink text-white', 'bg-white text-ink border-y border-line lg:border-y-0 lg:border-x', 'bg-off text-ink'] as const
-          const tone = tones[i % tones.length]
-          const isGold = i === 0
-          const isInk = i === 1
-          return (
-            <div key={goal.title} className={`px-7 py-9 md:px-8 md:py-10 ${tone}`}>
-              <goal.icon
-                className={`h-7 w-7 ${isGold ? 'text-ink' : isInk ? 'text-gold' : 'text-gold'}`}
-                strokeWidth={1.5}
-              />
-              <h2 className="mt-4 font-sans text-xl font-bold tracking-tight">{goal.title}</h2>
-              <p
-                className={`mt-3 text-sm font-light leading-relaxed ${
-                  isGold ? 'text-ink/75' : isInk ? 'text-white/70' : 'text-muted'
-                }`}
-              >
-                {goal.body}
-              </p>
-            </div>
-          )
-        })}
+      <section id="goals">
+        <StaggerGroup className="grid sm:grid-cols-2 lg:grid-cols-4" alternate stagger={0.06}>
+          {goals.map((goal, i) => {
+            const tones = [
+              'bg-gold text-ink',
+              'bg-ink text-white',
+              'bg-white text-ink border-y border-line lg:border-y-0 lg:border-x',
+              'bg-off text-ink',
+            ] as const
+            const tone = tones[i % tones.length]
+            const isGold = i === 0
+            const isInk = i === 1
+            return (
+              <StaggerItem key={goal.title}>
+                <div className={`h-full px-7 py-9 md:px-8 md:py-10 ${tone}`}>
+                  <goal.icon
+                    className={`h-7 w-7 ${isGold ? 'text-ink' : 'text-gold'}`}
+                    strokeWidth={1.5}
+                  />
+                  <h2 className="mt-4 font-sans text-xl font-bold tracking-tight">{goal.title}</h2>
+                  <p
+                    className={`mt-3 text-sm font-light leading-relaxed ${
+                      isGold ? 'text-ink/75' : isInk ? 'text-white/70' : 'text-muted'
+                    }`}
+                  >
+                    {goal.body}
+                  </p>
+                </div>
+              </StaggerItem>
+            )
+          })}
+        </StaggerGroup>
       </section>
 
       {/* The Call */}
       <section id="call" className="bg-white py-16 md:py-24">
         <div className="site-container grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
-          <ScrollReveal className="lg:col-span-6">
+          <ScrollReveal direction="left" className="lg:col-span-6">
             <div className="overflow-hidden">
               <img
                 src="/images/blaklaaa.jpg"
@@ -223,43 +232,33 @@ export default function Blacklaa() {
             </div>
           </ScrollReveal>
 
-          <StaggerGroup className="lg:col-span-6" stagger={0.08}>
-            <StaggerItem>
-              <p className="eyebrow mb-3">The Call</p>
-            </StaggerItem>
-            <StaggerItem>
-              <h2 className="font-sans text-3xl font-bold leading-tight tracking-tight text-ink md:text-4xl">
-                Pride backed by understanding
-              </h2>
-            </StaggerItem>
-            <StaggerItem>
-              <div className="my-5 gold-divider" />
-            </StaggerItem>
-            <StaggerItem>
-              <div className="space-y-4 text-base font-light leading-relaxed text-muted">
-                <p>
-                  Nana Quasi-Wusu originated the popular jargon{' '}
-                  <span className="font-medium text-gold">BLAKLAAA</span> — Proud to be Black. What
-                  started as a phrase became a movement: a community and Pan-African organisation
-                  that campaigns against skin bleaching, promotes African history and culture,
-                  champions Made-in-Africa goods, and empowers youth as legal hustlers.
-                </p>
-                <p>
-                  Through radio education on The DrYve, BlakTrip travel experiences, and community
-                  presence, Blaklaaa builds bridges of knowledge — so pride is backed by
-                  understanding.
-                </p>
-              </div>
-            </StaggerItem>
-            <StaggerItem>
-              <Link
-                to="/pm-foundation"
-                className="mt-6 inline-flex items-center gap-2 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-ink transition-colors hover:text-gold"
-              >
-                PM Foundation
-              </Link>
-            </StaggerItem>
-          </StaggerGroup>
+          <ScrollReveal direction="right" delay={0.08} className="lg:col-span-6">
+            <p className="eyebrow mb-3">The Call</p>
+            <h2 className="font-sans text-3xl font-bold leading-tight tracking-tight text-ink md:text-4xl">
+              Pride backed by understanding
+            </h2>
+            <div className="my-5 gold-divider" />
+            <div className="space-y-4 text-base font-light leading-relaxed text-muted">
+              <p>
+                Nana Quasi-Wusu originated the popular jargon{' '}
+                <span className="font-medium text-gold">BLAKLAAA</span> — Proud to be Black. What
+                started as a phrase became a movement: a community and Pan-African organisation
+                that campaigns against skin bleaching, promotes African history and culture,
+                champions Made-in-Africa goods, and empowers youth as legal hustlers.
+              </p>
+              <p>
+                Through radio education on The DrYve, BlakTrip travel experiences, and community
+                presence, Blaklaaa builds bridges of knowledge — so pride is backed by
+                understanding.
+              </p>
+            </div>
+            <Link
+              to="/pm-foundation"
+              className="mt-6 inline-flex items-center gap-2 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-ink transition-colors hover:text-gold"
+            >
+              PM Foundation
+            </Link>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -391,20 +390,22 @@ export default function Blacklaa() {
       {/* Join band */}
       <section className="bg-gold py-12 sm:py-14 md:py-16">
         <div className="site-container flex flex-col items-stretch justify-between gap-5 sm:gap-6 md:flex-row md:items-center">
-          <div className="max-w-xl">
+          <ScrollReveal direction="left" className="max-w-xl">
             <h2 className="font-sans text-xl font-bold tracking-tight text-ink sm:text-2xl md:text-3xl">
               Ready for the next BlakTrip?
             </h2>
             <p className="mt-2 text-sm font-light text-ink/75">
               Community, campaigns, and curated journeys across Ghana — Proud to be Black.
             </p>
-          </div>
-          <Link
-            to="/contact"
-            className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-ink px-7 py-3.5 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-white transition-colors hover:bg-black sm:w-auto"
-          >
-            Get Involved
-          </Link>
+          </ScrollReveal>
+          <ScrollReveal direction="right" delay={0.08}>
+            <Link
+              to="/contact"
+              className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-ink px-7 py-3.5 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-white transition-colors hover:bg-black sm:w-auto"
+            >
+              Get Involved
+            </Link>
+          </ScrollReveal>
         </div>
       </section>
 

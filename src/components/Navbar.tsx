@@ -6,6 +6,7 @@ import { brand, contactInfo, getLogoForPath, getSocialsForPath, ventures } from 
 import { navPages } from '../data/navSections'
 import BrandLogo from './BrandLogo'
 import SocialIconLinks from './SocialIcons'
+import ThemeToggle from './ThemeToggle'
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -85,14 +86,17 @@ export default function Navbar() {
             />
           </div>
 
-          <button
-            type="button"
-            className="-mr-1 flex h-11 w-11 shrink-0 items-center justify-center text-ink lg:hidden"
-            onClick={() => setMobileOpen((o) => !o)}
-            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-          >
-            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
+            <ThemeToggle className="border-transparent lg:border-line" />
+            <button
+              type="button"
+              className="flex h-11 w-11 items-center justify-center text-ink lg:hidden"
+              onClick={() => setMobileOpen((o) => !o)}
+              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+            >
+              {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
       </div>
 

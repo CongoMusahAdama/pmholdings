@@ -60,9 +60,9 @@ export const ventures: Venture[] = [
     shortName: 'CYTO',
     tagline: 'Talent Rules, Passion Conquers',
     description:
-      'We groom, mentor, and train young professionals — MCs, hypemen, speakers, and creatives — into career-ready craft.',
+      'Music-first talent house — we groom, mentor, and train singers and music artistes into career-ready craft. Purposeful development for music, not MC work.',
     path: '/cyto',
-    category: 'Talent',
+    category: 'Music',
     logo: '/logos/cyto.jpg',
   },
   {

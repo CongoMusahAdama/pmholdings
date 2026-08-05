@@ -26,13 +26,13 @@ export const cytoRoadmapSteps: RoadmapStep[] = [
   {
     num: '02',
     title: 'Train',
-    body: 'Stagecraft, voice, brand, and discipline.',
+    body: 'Voice, songs, brand, and music discipline.',
     icon: GraduationCap,
   },
   {
     num: '03',
     title: 'Mentor',
-    body: 'One-on-one guidance from The Finest MC.',
+    body: 'One-on-one guidance for a music career.',
     icon: Users,
   },
   {

@@ -14,7 +14,7 @@ export default function PageLoader() {
     prevPath.current = pathname
 
     setActive(true)
-    const done = window.setTimeout(() => setActive(false), 1000)
+    const done = window.setTimeout(() => setActive(false), 1500)
     return () => window.clearTimeout(done)
   }, [pathname])
 
@@ -23,7 +23,7 @@ export default function PageLoader() {
       {active && (
         <motion.div
           key="page-loader"
-          className="fixed inset-0 z-[200] flex items-center justify-center bg-[#f0f0f0]"
+          className="page-loader-screen fixed inset-0 z-[200] flex items-center justify-center bg-[#f0f0f0]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

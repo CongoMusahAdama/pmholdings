@@ -86,12 +86,13 @@ export const navPages: NavPage[] = [
   {
     to: '/cyto',
     label: 'CYTO',
-    description: 'Talent incubation and development.',
+    description: 'Music talent incubation — singers and artistes.',
     sections: [
       { id: 'pillars', label: 'Groom · Mentor · Train' },
       { id: 'mission', label: 'What Cyto Does' },
       { id: 'process', label: 'The Roadmap' },
       { id: 'focus', label: 'Who We Develop' },
+      { id: 'artiste', label: 'Tinuabrus' },
       { id: 'talent', label: 'In the Room' },
       { id: 'connect', label: 'Apply / Inquire' },
     ],
