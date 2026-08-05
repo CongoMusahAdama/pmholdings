@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <circle cx="60" cy="60" r="56" fill="#111111"/>
+  <circle cx="60" cy="60" r="34" stroke="#D4AF37" stroke-width="2.5"/>
+  <circle cx="60" cy="60" r="18" stroke="#D4AF37" stroke-width="2"/>
+  <circle cx="60" cy="60" r="5" fill="#D4AF37"/>
+  <text x="60" y="104" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="800" fill="#D4AF37" letter-spacing="3">CYTO</text>
+</svg>

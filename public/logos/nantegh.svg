@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <rect x="8" y="8" width="104" height="104" rx="12" fill="#111111"/>
+  <path d="M30 78 L60 28 L90 78 Z" stroke="#D4AF37" stroke-width="3" fill="none"/>
+  <circle cx="60" cy="62" r="10" stroke="#D4AF37" stroke-width="2.5"/>
+  <text x="60" y="98" text-anchor="middle" font-family="Georgia, serif" font-size="12" font-weight="700" fill="#D4AF37" letter-spacing="1">NANTEGH</text>
+</svg>

@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+@theme {
+  --color-black: #111111;
+  --color-ink: #1a1a1a;
+  --color-white: #ffffff;
+  --color-off: #f7f7f7;
+  --color-soft: #f0f0f0;
+  --color-gold: #d4af37;
+  --color-gold-dark: #b8941f;
+  --color-gold-light: #e8c96a;
+  --color-muted: #6b6b6b;
+  --color-line: rgba(17, 17, 17, 0.08);
+  --color-line-strong: rgba(17, 17, 17, 0.14);
+
+  --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
+
+  --shadow-card: 0 18px 40px rgba(17, 17, 17, 0.08);
+  --shadow-soft: 0 10px 30px rgba(17, 17, 17, 0.06);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+    margin: 0;
+    min-height: 100svh;
+    overflow-x: clip;
+  }
+
+  #root {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-gold) 45%, transparent);
+    color: var(--color-ink);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-sans font-bold tracking-[-0.02em] text-ink;
+    text-wrap: balance;
+  }
+
+  a {
+    @apply transition-colors duration-300;
+  }
+
+  img {
+    @apply max-w-full;
+  }
+
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    touch-action: manipulation;
+  }
+
+  [id] {
+    scroll-margin-top: 5.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    [id] {
+      scroll-margin-top: 10rem;
+    }
+  }
+}
+
+@layer components {
+  .site-container {
+    @apply mx-auto w-full max-w-[1200px] px-4 sm:px-5 md:px-8 lg:px-10;
+  }
+
+  .btn-primary {
+    @apply inline-flex min-h-11 items-center justify-center rounded-full bg-gold px-5 py-3 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-ink transition-all duration-300 hover:bg-gold-dark sm:min-h-12 sm:px-7 sm:py-3.5 sm:text-[0.72rem] sm:tracking-[0.16em];
+  }
+
+  .btn-ghost {
+    @apply inline-flex min-h-11 items-center justify-center rounded-full border border-ink/15 bg-white px-5 py-3 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-ink transition-all duration-300 hover:border-gold hover:text-gold sm:min-h-12 sm:px-7 sm:py-3.5 sm:text-[0.72rem] sm:tracking-[0.16em];
+  }
+
+  .btn-ghost-light {
+    @apply inline-flex min-h-11 items-center justify-center rounded-full border border-white/40 px-5 py-3 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-white transition-all duration-300 hover:border-gold hover:text-gold sm:min-h-12 sm:px-7 sm:py-3.5 sm:text-[0.72rem] sm:tracking-[0.16em];
+  }
+
+  /* Side-by-side CTAs on mobile */
+  .action-row {
+    @apply flex w-full flex-row items-stretch gap-2 sm:w-auto sm:flex-wrap sm:gap-3;
+  }
+
+  .action-row > a,
+  .action-row > button {
+    @apply min-w-0 flex-1 justify-center text-center sm:flex-none;
+  }
+
+  .eyebrow {
+    @apply text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold;
+  }
+
+  .hairline {
+    @apply h-px w-full bg-line-strong;
+  }
+
+  .panel {
+    @apply border border-line bg-white shadow-[var(--shadow-soft)];
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gold-divider {
+    @apply h-[2px] w-12 bg-gold;
+  }
+
+  .breathe {
+    animation: breathe 5.5s ease-in-out infinite;
+  }
+
+  .breathe-slow {
+    animation: breathe 7s ease-in-out infinite;
+  }
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.page-spinner {
+  position: relative;
+  width: 3.5rem;
+  height: 3.5rem;
+  animation: page-spinner-spin 0.9s linear infinite;
+}
+
+.page-spinner__arm {
+  position: absolute;
+  inset: 0;
+}
+
+.page-spinner__dot {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  border-radius: 9999px;
+  background: var(--color-gold);
+  transform: translateX(-50%);
+}
+
+@keyframes page-spinner-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Mobile-safe: keep long uppercase labels from overflowing */
+@media (max-width: 639px) {
+  .site-container {
+    overflow-wrap: anywhere;
+  }
+}

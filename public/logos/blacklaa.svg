@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <rect width="120" height="120" rx="16" fill="#111111"/>
+  <path d="M60 22 C48 38 34 48 34 64 C34 80 46 92 60 92 C74 92 86 80 86 64 C86 48 72 38 60 22Z" fill="#D4AF37"/>
+  <path d="M60 40 C54 48 48 54 48 64 C48 72 53 78 60 78 C67 78 72 72 72 64 C72 54 66 48 60 40Z" fill="#111111"/>
+  <text x="60" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="800" fill="#FFFFFF" letter-spacing="1">BLAKLAAA</text>
+</svg>
