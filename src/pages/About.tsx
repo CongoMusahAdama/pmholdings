@@ -310,8 +310,6 @@ export default function About() {
                   to={pillar.to}
                   icon={pillar.icon}
                   variant={pillar.variant}
-                  image={pillar.image}
-                  imageAlt={pillar.imageAlt}
                 />
               </StaggerItem>
             ))}

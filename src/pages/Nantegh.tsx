@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { ArrowLeft, ArrowRight, ShoppingBag } from 'lucide-react'
 import SEO from '../components/SEO'
 import ScrollReveal from '../components/ScrollReveal'
