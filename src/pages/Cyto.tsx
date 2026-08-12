@@ -88,7 +88,8 @@ export default function Cyto() {
     <>
       <SEO
         title="Cyto Records"
-        description="Cyto Records — music-first talent house by Nana Quasi-Wusu (PM). We develop singers and music artistes purposefully for music — not MC work. Talent rules. Passion conquers."
+        path="/cyto"
+        description="Cyto Records under PM Holdings — music-first talent house by Nana Quasi-Wusu (PM). We develop singers and music artistes purposefully for music — not MC work. Talent rules. Passion conquers."
       />
 
       {/* Hero */}

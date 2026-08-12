@@ -121,7 +121,8 @@ export default function Home() {
     <>
       <SEO
         title="Home"
-        description="Nana Quasi-Wusu (PM) — The Finest MC, award-winning Ghanaian broadcaster, professional MC/hypeman, humanitarian, fashion model and founder of PM Foundation & PM Entertainment Consult."
+        path="/"
+        description="PM Holdings — Nana Quasi-Wusu (PM), The Finest MC. Award-winning Ghanaian broadcaster, professional MC/hypeman, humanitarian and fashion model. Home of PM Foundation, PM Entertainment, Cyto Records, Blaklaaa, Nantegh and Modeling in Takoradi, Ghana."
       />
 
       <Hero />

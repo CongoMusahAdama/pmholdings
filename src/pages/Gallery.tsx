@@ -102,7 +102,8 @@ export default function Gallery() {
     <>
       <SEO
         title="Gallery"
-        description="Photos of Nana Quasi-Wusu (PM) — broadcasting, events, PM Foundation outreach, fashion, and Blaklaaa Movement moments."
+        path="/gallery"
+        description="PM Holdings gallery — photos of Nana Quasi-Wusu (PM): broadcasting, events, PM Foundation outreach, fashion, and Blaklaaa Movement moments."
       />
 
       {/* Gallery hero — clean full-bleed like venture pages */}

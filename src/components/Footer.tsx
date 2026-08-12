@@ -12,8 +12,10 @@ export default function Footer() {
           <Link to="/" className="inline-flex items-center gap-2.5">
             <BrandLogo className="h-10 w-10" />
             <div className="min-w-0 leading-tight">
-              <span className="block truncate text-sm font-bold">{brand.fullName}</span>
-              <span className="block text-[0.65rem] tracking-[0.14em] text-gold">{brand.handle}</span>
+              <span className="block truncate text-sm font-bold">{brand.holdings}</span>
+              <span className="block text-[0.65rem] tracking-[0.14em] text-gold">
+                {brand.fullName} · {brand.handle}
+              </span>
             </div>
           </Link>
 
@@ -73,7 +75,7 @@ export default function Footer() {
           </div>
 
           <p className="mt-5 text-center text-[0.65rem] leading-relaxed text-white/40">
-            © {new Date().getFullYear()} {brand.fullName} (PM) · Takoradi
+            © {new Date().getFullYear()} {brand.holdings} · {brand.fullName} (PM) · Takoradi
           </p>
         </div>
 
@@ -83,10 +85,11 @@ export default function Footer() {
             <div className="min-w-0 lg:col-span-4">
               <Link to="/" className="inline-flex items-center gap-3">
                 <BrandLogo className="h-12 w-12" />
-                <span className="text-lg font-bold">{brand.fullName}</span>
+                <span className="text-lg font-bold">{brand.holdings}</span>
               </Link>
               <p className="mt-5 max-w-sm text-sm font-light leading-relaxed text-white/65">
-                {brand.title}. Broadcaster, humanitarian, fashion model & entertainment consultant.
+                {brand.holdings} — home of {brand.fullName} ({brand.stageName}), {brand.title}.
+                Broadcaster, humanitarian, fashion model &amp; entertainment consultant.{' '}
                 {brand.slogan}.
               </p>
               <p className="mt-4 text-xs tracking-[0.16em] text-gold">{brand.handle}</p>
@@ -158,7 +161,8 @@ export default function Footer() {
 
           <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-7 text-xs text-white/45 sm:flex-row">
             <p>
-              © {new Date().getFullYear()} {brand.fullName} (PM). All rights reserved.
+              © {new Date().getFullYear()} {brand.holdings} — {brand.fullName} (PM). All rights
+              reserved.
             </p>
             <p className="uppercase tracking-[0.18em]">Takoradi, Ghana</p>
           </div>

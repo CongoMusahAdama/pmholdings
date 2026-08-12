@@ -80,7 +80,8 @@ export default function Modeling() {
     <>
       <SEO
         title="Modeling"
-        description="Nana Quasi-Wusu (PM) — fashion model, broadcaster and The Finest MC. Runway, editorial presence, and brand appearances."
+        path="/modeling"
+        description="Modeling under PM Holdings — Nana Quasi-Wusu (PM), fashion model, broadcaster and The Finest MC. Runway, editorial presence, and brand appearances."
       />
 
       {/* Photo hero */}

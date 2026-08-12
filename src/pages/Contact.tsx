@@ -18,7 +18,8 @@ export default function Contact() {
     <>
       <SEO
         title="Contact"
-        description="Contact Nana Quasi-Wusu (PM) — The Finest MC — for bookings, business inquiries, foundation partnerships, and collaborations."
+        path="/contact"
+        description="Contact PM Holdings / Nana Quasi-Wusu (PM) — The Finest MC — for bookings, business inquiries, foundation partnerships, and collaborations in Ghana."
       />
 
       <section className="bg-off pb-12 pt-24 sm:pb-16 sm:pt-28 md:pb-24 md:pt-32">

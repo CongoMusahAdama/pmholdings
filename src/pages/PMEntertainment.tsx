@@ -80,7 +80,8 @@ export default function PMEntertainment() {
     <>
       <SEO
         title="PM Entertainment"
-        description="PM Entertainment Consult by Nana Quasi-Wusu (PM) — professional MC/hypeman bookings, entertainment consulting, talent management, The Finest MasterClass, and BlakTrip."
+        path="/pm-entertainment"
+        description="PM Entertainment Consult under PM Holdings by Nana Quasi-Wusu (PM) — professional MC/hypeman bookings, entertainment consulting, talent management, The Finest MasterClass, and BlakTrip."
       />
 
       {/* Photo hero */}

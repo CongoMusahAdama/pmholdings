@@ -146,7 +146,8 @@ export default function Blacklaa() {
     <>
       <SEO
         title="Blaklaaa Movement"
-        description="Blaklaaa Movement by Nana Quasi-Wusu (PM) — Proud to be Black. Pan-African pride, BlakTrip tourism experiences across Ghana, anti-skin-bleaching campaigns, and youth empowerment."
+        path="/blacklaa"
+        description="Blaklaaa Movement under PM Holdings by Nana Quasi-Wusu (PM) — Proud to be Black. Pan-African pride, BlakTrip tourism experiences across Ghana, anti-skin-bleaching campaigns, and youth empowerment."
       />
 
       {/* Photo hero */}

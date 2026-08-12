@@ -168,7 +168,8 @@ export default function Nantegh() {
     <>
       <SEO
         title="Nantegh"
-        description="Nantegh / Nante — Made-in-Ghana fashion and handmade footwear under Nana Quasi-Wusu (PM). Look smart, walk in comfort."
+        path="/nantegh"
+        description="Nantegh / Nante under PM Holdings — Made-in-Ghana fashion and handmade footwear by Nana Quasi-Wusu (PM). Look smart, walk in comfort."
       />
 
       {/* Store welcome bar */}

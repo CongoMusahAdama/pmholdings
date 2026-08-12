@@ -70,7 +70,8 @@ export default function PMFoundation() {
     <>
       <SEO
         title="PM Foundation"
-        description="PM Foundation — award-winning NGO by Nana Quasi-Wusu (PM) supporting the less privileged, scholarships, youth empowerment, Made-in-Ghana advocacy, and campaigns against skin bleaching."
+        path="/pm-foundation"
+        description="PM Foundation under PM Holdings — award-winning NGO by Nana Quasi-Wusu (PM) supporting the less privileged, scholarships, youth empowerment, Made-in-Ghana advocacy, and campaigns against skin bleaching."
       />
 
       {/* Charity-style hero */}

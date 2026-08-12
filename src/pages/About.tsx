@@ -105,7 +105,8 @@ export default function About() {
     <>
       <SEO
         title="About"
-        description="Meet Nana Quasi-Wusu (PM), The Finest MC — award-winning Ghanaian broadcaster, professional MC/hypeman, humanitarian, fashion model, and founder of PM Foundation and PM Entertainment Consult."
+        path="/about"
+        description="About Nana Quasi-Wusu (PM) of PM Holdings — The Finest MC. Award-winning Ghanaian broadcaster, professional MC/hypeman, humanitarian, fashion model, and founder of PM Foundation and PM Entertainment Consult."
       />
 
       {/* Centered intro — reference-style hero */}

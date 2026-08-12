@@ -17,6 +17,7 @@ export const brand = {
   location: 'Takoradi, Ghana',
   radio: 'Host of The DrYve of Your Lyfe — weekdays 3–7 PM on Y97.9FM Takoradi',
   handle: '@PmTheFinestMc',
+  holdings: 'PM Holdings',
   logo: '/logos/pm.jpg',
 }
 
