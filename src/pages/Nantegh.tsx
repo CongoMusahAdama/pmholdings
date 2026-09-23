@@ -200,7 +200,7 @@ export default function Nantegh() {
             </p>
             <AnimatedHeading
               text="Look Smart Collection"
-              className="font-sans text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
+              className="font-sans text-[1.85rem] font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
             />
             <p className="mx-auto mt-5 max-w-md text-sm font-light leading-relaxed text-white/85 md:text-base">
               Originally handmade footwear and fashion presence — crafted to look smart and walk

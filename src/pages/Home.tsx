@@ -355,10 +355,10 @@ export default function Home() {
             </StaggerItem>
             <div className="grid grid-cols-2 gap-4">
               <StaggerItem>
-                <div className="breathe flex h-full flex-col justify-center rounded-3xl bg-gold p-7 text-white shadow-[var(--shadow-card)]">
+                <div className="breathe flex h-full flex-col justify-center rounded-3xl bg-gold p-6 text-ink shadow-[var(--shadow-card)] sm:p-7">
                   <CheckCircle2 className="mb-4 h-8 w-8" strokeWidth={1.75} />
-                  <p className="font-sans text-4xl font-bold md:text-5xl">1000+</p>
-                  <p className="mt-2 text-sm font-medium leading-snug text-white/90">
+                  <p className="font-sans text-3xl font-bold sm:text-4xl md:text-5xl">1000+</p>
+                  <p className="mt-2 text-sm font-medium leading-snug text-ink/80">
                     Events Hosted Nationwide
                   </p>
                 </div>
@@ -399,7 +399,7 @@ export default function Home() {
               <div className="mt-8 flex flex-wrap items-center gap-5">
                 <Link
                   to="/about"
-                  className="inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-bold text-white transition-colors hover:bg-gold-dark"
+                  className="inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-bold text-ink transition-colors hover:bg-gold-dark"
                 >
                   More About Us
                 </Link>
@@ -431,7 +431,7 @@ export default function Home() {
                     {skills.map((skill) => (
                       <span
                         key={skill}
-                        className="rounded-full bg-off px-3 py-1 text-[0.7rem] font-medium text-ink/80"
+                        className="rounded-full border border-line bg-soft px-3 py-1 text-[0.7rem] font-medium text-ink"
                       >
                         {skill}
                       </span>
@@ -516,7 +516,7 @@ export default function Home() {
                 </p>
               </StaggerItem>
               <StaggerItem>
-                <ul className="mt-6 space-y-2 text-sm text-ink/80">
+                <ul className="mt-6 space-y-2 text-sm text-muted">
                   <li className="flex gap-2">
                     <span className="text-gold">•</span>
                     First major release under PEC

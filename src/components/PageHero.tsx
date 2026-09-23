@@ -26,14 +26,14 @@ export default function PageHero({
             </span>
           )}
           {eyebrow && (
-            <p className="text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold">
+            <p className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-gold sm:text-[0.72rem] sm:tracking-[0.28em]">
               {eyebrow}
             </p>
           )}
         </div>
         <AnimatedHeading
           text={title}
-          className="max-w-4xl font-sans text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl"
+          className="max-w-4xl font-sans text-[1.85rem] font-bold leading-[1.12] text-white sm:text-5xl md:text-6xl"
         />
         <div className="my-6 gold-divider" />
         {subtitle && (

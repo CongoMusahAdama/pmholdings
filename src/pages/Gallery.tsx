@@ -247,13 +247,13 @@ export default function Gallery() {
                       )}
                       <span
                         className={`relative z-10 inline-flex items-center gap-2 ${
-                          isActive ? 'text-ink' : 'text-white/65 hover:text-white'
+                          isActive ? 'text-[#1a1a1a]' : 'text-white/65 hover:text-white'
                         }`}
                       >
                         {cat}
                         <span
                           className={`min-w-[1.4rem] text-center text-[0.6rem] tabular-nums ${
-                            isActive ? 'text-ink/70' : 'text-white/35'
+                            isActive ? 'text-[#1a1a1a]/70' : 'text-white/35'
                           }`}
                         >
                           {counts[cat] ?? 0}

@@ -126,7 +126,7 @@ export default function About() {
             <AnimatedHeading
               text="Excellence is My Hallmark."
               mutedText="Purpose drives everything else."
-              className="mx-auto max-w-4xl font-sans text-4xl font-bold leading-[1.12] tracking-tight text-ink sm:text-5xl md:text-6xl lg:text-[3.75rem]"
+              className="mx-auto max-w-4xl font-sans text-[1.85rem] font-bold leading-[1.12] tracking-tight text-ink sm:text-5xl md:text-6xl lg:text-[3.75rem]"
             />
             <p className="mx-auto mt-6 max-w-2xl text-base font-light leading-relaxed text-muted md:text-lg">
               Nana Quasi-Wusu — professionally known as PM, The Finest MC. Broadcaster, hypeman,

@@ -4,41 +4,40 @@ import { AnimatePresence, motion } from 'framer-motion'
 
 const slides = [
   {
-    src: '/images/about.jpg',
+    src: '/images/hero/home-mc.jpg',
     label: 'The Finest MC',
     caption: 'Broadcast & Stage Presence',
-    position: 'center 18%',
+    position: '72% 14%',
   },
   {
-    src: '/images/foundation45.jpg',
+    src: '/images/hero/home-foundation.jpg',
     label: 'PM Foundation',
     caption: 'Donation & Community Service',
-    position: 'center 30%',
+    position: 'center 42%',
   },
   {
-    src: '/images/modeling-kente.webp',
+    src: '/images/hero/home-fashion.jpg',
     label: 'Fashion & Modeling',
     caption: 'Style, Culture, Presence',
-    position: 'center 32%',
+    position: '68% 18%',
   },
   {
-    src: '/images/mc.jpg',
+    src: '/images/hero/home-stage.jpg',
     label: 'Live Entertainment',
     caption: '15 Years of Excellence',
-    position: 'center 22%',
+    position: '62% 16%',
   },
   {
-    src: '/images/blaklaaa.jpg',
+    src: '/images/hero/home-blaklaaa.jpg',
     label: 'Blaklaaa Movement',
     caption: 'Proud to Be Black',
-    position: 'center 28%',
+    position: 'center 48%',
   },
 ]
 
 const SLIDE_MS = 5200
 
 interface HeroProps {
-  eyebrow?: string
   title?: string
   subtitle?: string
   ctaLabel?: string
@@ -67,7 +66,6 @@ const titleWord = {
 }
 
 export default function Hero({
-  eyebrow = 'Excellence Is My Hallmark',
   title = 'Welcome to Nana Quasi-Wusu',
   subtitle = 'The Finest MC — award-winning broadcaster, professional hypeman, humanitarian, fashion model, and entertainment consultant from Takoradi, Ghana.',
   ctaLabel = 'Read More',
@@ -93,8 +91,7 @@ export default function Hero({
 
   return (
     <div>
-      <section id="hero" className="relative min-h-[72svh] overflow-hidden bg-ink md:min-h-[78svh]">
-        {/* Full-bleed carousel */}
+      <section id="hero" className="relative min-h-[72svh] overflow-hidden bg-ink md:min-h-[82svh]">
         <div className="absolute inset-0">
           <AnimatePresence initial={false} mode="sync">
             <motion.div
@@ -103,39 +100,26 @@ export default function Hero({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 1.25, ease }}
+              transition={{ duration: 0.9, ease }}
             >
-              <motion.img
+              <img
                 src={active.src}
                 alt={`${active.label} — Nana Quasi-Wusu (PM)`}
-                className="h-full w-full object-cover will-change-transform"
+                className="h-full w-full object-cover"
                 style={{ objectPosition: active.position }}
                 decoding="async"
                 fetchPriority={index === 0 ? 'high' : 'low'}
                 sizes="100vw"
-                initial={{ scale: 1, x: '0%' }}
-                animate={{ scale: 1.025, x: '-0.4%' }}
-                transition={{ duration: SLIDE_MS / 1000, ease: 'linear' }}
               />
             </motion.div>
           </AnimatePresence>
         </div>
 
-        {/* Atmosphere overlays */}
-        <div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-r from-black/70 via-black/45 to-black/25" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-1/3 bg-gradient-to-t from-black/50 to-transparent" />
+        <div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-r from-black/55 via-black/28 to-black/10" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-1/3 bg-gradient-to-t from-black/45 to-transparent" />
 
-        <div className="site-container relative z-[3] flex min-h-[72svh] flex-col justify-center py-16 md:min-h-[78svh] md:py-20">
+        <div className="site-container relative z-[3] flex min-h-[72svh] flex-col justify-center py-16 md:min-h-[82svh] md:py-20">
           <div className="max-w-xl text-left md:max-w-lg lg:max-w-xl">
-            <motion.p
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, ease }}
-              className="mb-3 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold md:mb-4"
-            >
-              {eyebrow}
-            </motion.p>
-
             <motion.h1
               className="font-sans text-[1.85rem] font-bold uppercase leading-[1.12] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-[3.15rem]"
               variants={titleContainer}
@@ -168,7 +152,7 @@ export default function Hero({
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, delay: 0.9, ease }}
-              className="action-row mt-7"
+              className="mt-7"
             >
               <Link to={ctaTo} className="btn-primary">
                 {ctaLabel}
@@ -177,7 +161,6 @@ export default function Hero({
           </div>
         </div>
 
-        {/* Carousel controls — bottom */}
         <div className="site-container absolute inset-x-0 bottom-0 z-[4] pb-6 md:pb-8">
           <div className="flex items-end justify-between gap-6">
             <AnimatePresence mode="wait">

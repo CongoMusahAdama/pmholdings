@@ -112,8 +112,13 @@
     @apply min-w-0 flex-1 justify-center text-center sm:flex-none;
   }
 
+  .action-row > a:only-child,
+  .action-row > button:only-child {
+    @apply flex-none;
+  }
+
   .eyebrow {
-    @apply text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold;
+    @apply text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-gold sm:text-[0.72rem] sm:tracking-[0.28em];
   }
 
   .hairline {
@@ -185,6 +190,11 @@
   .site-container {
     overflow-wrap: anywhere;
   }
+
+  h1,
+  h2 {
+    overflow-wrap: anywhere;
+  }
 }
 
 /* ── Dark mode ───────────────────────────────────────────
@@ -225,8 +235,35 @@ html.dark .bg-soft {
   background-color: #1c1c1c !important;
 }
 
-html.dark .text-ink {
+html.dark .text-ink,
+html.dark .text-ink\/90,
+html.dark .text-ink\/85,
+html.dark .text-ink\/80,
+html.dark .text-ink\/75,
+html.dark .text-ink\/70,
+html.dark .text-ink\/65,
+html.dark .text-ink\/60,
+html.dark .text-ink\/55,
+html.dark .text-ink\/50,
+html.dark .text-ink\/45 {
   color: #f2f2f2 !important;
+}
+
+html.dark .text-ink\/80,
+html.dark .text-ink\/75 {
+  color: rgba(242, 242, 242, 0.82) !important;
+}
+
+html.dark .text-ink\/70,
+html.dark .text-ink\/65,
+html.dark .text-ink\/60 {
+  color: rgba(242, 242, 242, 0.7) !important;
+}
+
+html.dark .text-ink\/55,
+html.dark .text-ink\/50,
+html.dark .text-ink\/45 {
+  color: rgba(242, 242, 242, 0.55) !important;
 }
 
 html.dark .text-muted {
@@ -280,6 +317,9 @@ html.dark .bg-gold p {
   color: #1a1a1a !important;
 }
 
+html.dark .bg-gold .text-ink\/90,
+html.dark .bg-gold .text-ink\/85,
+html.dark .bg-gold .text-ink\/80,
 html.dark .bg-gold .text-ink\/75,
 html.dark .bg-gold .text-ink\/70 {
   color: rgba(26, 26, 26, 0.75) !important;
@@ -384,6 +424,12 @@ html.dark .bg-off .text-ink,
 html.dark .bg-soft .text-ink,
 html.dark .panel .text-ink {
   color: #f2f2f2 !important;
+}
+
+html.dark .bg-white .bg-off,
+html.dark .panel .bg-off,
+html.dark .bg-white .bg-soft {
+  background-color: #2a2a2a !important;
 }
 
 html.dark .bg-white .text-muted,

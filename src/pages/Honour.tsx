@@ -43,7 +43,7 @@ export default function Honour() {
           </p>
           <AnimatedHeading
             text={honour.body}
-            className="mt-4 max-w-3xl font-sans text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl"
+            className="mt-4 max-w-3xl font-sans text-[1.85rem] font-bold leading-[1.12] tracking-tight text-white sm:text-4xl md:text-6xl"
           />
           {summary ? (
             <p className="mt-5 text-base font-light text-white/65 md:text-lg">{summary}</p>
@@ -58,8 +58,8 @@ export default function Honour() {
           </p>
           <ul className="divide-y divide-line overflow-hidden rounded-[1.5rem] border border-line">
             {honour.categories.map((cat) => (
-              <li key={cat.name} className="flex items-start justify-between gap-4 px-6 py-5 md:px-7">
-                <p className="font-sans text-base font-semibold leading-snug text-ink md:text-lg">
+              <li key={cat.name} className="flex items-start justify-between gap-3 px-4 py-4 sm:gap-4 sm:px-6 md:px-7">
+                <p className="min-w-0 font-sans text-[0.95rem] font-semibold leading-snug text-ink md:text-lg">
                   {cat.name}
                 </p>
                 <span

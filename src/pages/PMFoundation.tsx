@@ -135,7 +135,7 @@ export default function PMFoundation() {
           <div className="max-w-3xl">
             <AnimatedHeading
               text="Help people. Our main goal is service."
-              className="font-sans text-4xl font-bold leading-[1.12] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[3.5rem]"
+              className="font-sans text-[1.85rem] font-bold leading-[1.12] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[3.5rem]"
             />
             <p className="mt-5 max-w-xl text-base font-light leading-relaxed text-white/80 md:text-lg">
               Scholarships, community care, youth empowerment, and cultural pride — founded on

@@ -61,7 +61,7 @@ export default function SectionHeading({
           {eyebrow && (
             <motion.p
               variants={fadeUp}
-              className="mb-3 inline-flex items-center gap-2 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold"
+              className="mb-3 inline-flex items-center gap-2 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-gold sm:text-[0.72rem] sm:tracking-[0.28em]"
             >
               {eyebrowIcon}
               {eyebrow}
@@ -70,7 +70,7 @@ export default function SectionHeading({
           <AnimatedHeading
             as="h2"
             text={title}
-            className={`max-w-xl font-sans text-4xl font-bold leading-[1.1] tracking-tight text-ink md:text-5xl lg:text-[3.35rem] ${titleClassName}`}
+            className={`max-w-xl font-sans text-[1.85rem] font-bold leading-[1.12] tracking-tight text-ink sm:text-4xl md:text-5xl lg:text-[3.35rem] ${titleClassName}`}
           />
         </div>
         <div className="lg:col-span-5">
@@ -104,7 +104,7 @@ export default function SectionHeading({
       {eyebrow && (
         <motion.p
           variants={fadeUp}
-          className="mb-3 inline-flex items-center gap-2 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold"
+          className="mb-3 inline-flex items-center gap-2 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-gold sm:text-[0.72rem] sm:tracking-[0.28em]"
         >
           {eyebrowIcon}
           {eyebrow}
@@ -113,7 +113,7 @@ export default function SectionHeading({
       <AnimatedHeading
         as="h2"
         text={title}
-        className={`font-sans text-3xl font-bold leading-tight tracking-tight text-ink md:text-4xl lg:text-[2.65rem] ${
+        className={`font-sans text-[1.75rem] font-bold leading-tight tracking-tight text-ink md:text-4xl lg:text-[2.65rem] ${
           centered ? '' : 'max-w-xl'
         } ${titleClassName}`}
       />

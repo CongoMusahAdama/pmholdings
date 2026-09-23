@@ -126,7 +126,7 @@ export default function PMEntertainment() {
             </motion.p>
             <AnimatedHeading
               text="Entertainment built on excellence"
-              className="font-sans text-4xl font-bold leading-[1.12] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[3.4rem]"
+              className="font-sans text-[1.85rem] font-bold leading-[1.12] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[3.4rem]"
             />
             <motion.p
               className="mt-5 max-w-2xl text-base font-light leading-relaxed text-white/80 md:text-lg"
