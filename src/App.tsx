@@ -11,6 +11,7 @@ import Blacklaa from './pages/Blacklaa'
 import Modeling from './pages/Modeling'
 import Gallery from './pages/Gallery'
 import Contact from './pages/Contact'
+import Honour from './pages/Honour'
 
 function ScrollManager() {
   const { pathname, hash } = useLocation()
@@ -41,6 +42,7 @@ export default function App() {
         <Route element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
+          <Route path="about/awards/:id" element={<Honour />} />
           <Route path="pm-foundation" element={<PMFoundation />} />
           <Route path="pm-entertainment" element={<PMEntertainment />} />
           <Route path="nantegh" element={<Nantegh />} />

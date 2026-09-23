@@ -16,7 +16,7 @@ export const brand = {
   slogan: 'Excellence is My Hallmark',
   location: 'Takoradi, Ghana',
   radio: 'Host of The DrYve of Your Lyfe — weekdays 3–7 PM on Y97.9FM Takoradi',
-  handle: '@PmTheFinestMc',
+  handle: '@pmthefinestmc',
   holdings: 'PM Holdings',
   logo: '/logos/pm.jpg',
 }
@@ -25,7 +25,7 @@ export const ventures: Venture[] = [
   {
     id: 'foundation',
     name: 'PM Foundation',
-    shortName: 'Foundation',
+    shortName: 'PM Foundation',
     tagline: 'Service to Humanity',
     description:
       'Award-winning NGO founded on PM’s 30th birthday — scholarships, Dine With The Street, blood drives, Love Trip outreaches, youth empowerment, and campaigns against skin bleaching.',
@@ -35,11 +35,11 @@ export const ventures: Venture[] = [
   },
   {
     id: 'entertainment',
-    name: 'PM Entertainment',
-    shortName: 'Entertainment',
-    tagline: 'Consult, MC, Mentorship',
+    name: 'PM Entertainment Consult',
+    shortName: 'PM Entertainment Consult',
+    tagline: 'Events · PR · Branding',
     description:
-      'PM Entertainment Consult — elite MC/hypeman bookings, event coordination, talent management, BlakTrip experiences, and The Finest MasterClass for aspiring communicators.',
+      'An events, PR, advertising and product activations, talent management, voice-overs, videography, photography and branding company based in Takoradi.',
     path: '/pm-entertainment',
     category: 'Entertainment',
     logo: '/logos/pm-entertainment.jpg',
@@ -57,19 +57,19 @@ export const ventures: Venture[] = [
   },
   {
     id: 'cyto',
-    name: 'Cyto Records',
-    shortName: 'CYTO',
+    name: 'Cyto GH',
+    shortName: 'Cyto GH',
     tagline: 'Talent Rules, Passion Conquers',
     description:
-      'Music-first talent house — we groom, mentor, and train singers and music artistes into career-ready craft. Purposeful development for music, not MC work.',
+      'Nurture, groom, and polish talents to become the best version of every gift they carry. 35+ presenters, MCs, hypemen, dancers, bloggers, artistes, musicians, models, beauty pageant, public speakers, and content creators — current beneficiary, Bluk.',
     path: '/cyto',
-    category: 'Music',
+    category: 'Talent',
     logo: '/logos/cyto.jpg',
   },
   {
     id: 'blacklaa',
     name: 'Blaklaaa Movement',
-    shortName: 'Blacklaa',
+    shortName: 'Blaklaaa',
     tagline: 'Proud to Be Black',
     description:
       'Pan-African movement promoting Black pride, African history and culture, Made-in-Africa goods, youth as legal hustlers, and campaigns against skin bleaching.',
@@ -93,7 +93,7 @@ export const ventures: Venture[] = [
 export function getLogoForPath(pathname: string): string {
   if (
     pathname === '/' ||
-    pathname === '/about' ||
+    pathname.startsWith('/about') ||
     pathname === '/contact' ||
     pathname === '/gallery'
   ) {
@@ -110,9 +110,11 @@ export interface SocialLink {
 
 /** Default / personal PM socials */
 export const socialLinks: SocialLink[] = [
-  { name: 'Facebook', href: 'https://www.facebook.com/TheFinestMc', label: '@TheFinestMc' },
-  { name: 'X', href: 'https://x.com/PmTheFinestMc', label: '@PmTheFinestMc' },
-  { name: 'Instagram', href: 'https://www.instagram.com/pmdepresenter', label: '@pmdepresenter' },
+  { name: 'Facebook', href: 'https://www.facebook.com/TheFinestMc', label: '@PMTheFinestMc' },
+  { name: 'X', href: 'https://x.com/pmthefinestmc', label: '@pmthefinestmc' },
+  { name: 'Instagram', href: 'https://www.instagram.com/pmthefinestmc', label: '@pmthefinestmc' },
+  { name: 'TikTok', href: 'https://www.tiktok.com/@pmthefinestmc', label: '@pmthefinestmc' },
+  { name: 'YouTube', href: 'https://www.youtube.com/@pmthefinestmc', label: '@pmthefinestmc' },
   {
     name: 'LinkedIn',
     href: 'https://www.linkedin.com/in/nana-quasi-wusu-pm-%F0%9F%87%AC%F0%9F%87%AD-9529b2102',
@@ -126,37 +128,27 @@ export const ventureSocials: Record<string, SocialLink[]> = {
     { name: 'Facebook', href: 'https://www.facebook.com/pmfoundation', label: '@pm__foundation' },
     { name: 'X', href: 'https://x.com/pm__foundation', label: '@pm__foundation' },
     { name: 'Instagram', href: 'https://www.instagram.com/pm__foundation', label: '@pm__foundation' },
-    { name: 'LinkedIn', href: socialLinks[3].href, label: 'PM Foundation' },
+    { name: 'LinkedIn', href: socialLinks[5].href, label: 'PM Foundation' },
   ],
-  '/pm-entertainment': [
-    { name: 'Facebook', href: 'https://www.facebook.com/TheFinestMc', label: '@TheFinestMc' },
-    { name: 'X', href: 'https://x.com/PmTheFinestMc', label: '@PmTheFinestMc' },
-    { name: 'Instagram', href: 'https://www.instagram.com/pmdepresenter', label: '@pmdepresenter' },
-    { name: 'LinkedIn', href: socialLinks[3].href, label: 'PM Entertainment' },
-  ],
+  '/pm-entertainment': socialLinks,
   '/nantegh': [
     { name: 'Facebook', href: 'https://www.facebook.com/NanteShoes', label: 'Nante Shoes' },
     { name: 'Instagram', href: 'https://www.instagram.com/nante_shoes', label: '@nante_shoes' },
-    { name: 'LinkedIn', href: socialLinks[3].href, label: 'Nantegh' },
+    { name: 'LinkedIn', href: socialLinks[5].href, label: 'Nantegh' },
   ],
   '/cyto': [
-    { name: 'Facebook', href: 'https://www.facebook.com/TheFinestMc', label: '@TheFinestMc' },
-    { name: 'X', href: 'https://x.com/PmTheFinestMc', label: '@PmTheFinestMc' },
+    { name: 'Facebook', href: 'https://www.facebook.com/TheFinestMc', label: '@PMTheFinestMc' },
+    { name: 'X', href: 'https://x.com/pmthefinestmc', label: '@pmthefinestmc' },
     { name: 'Instagram', href: 'https://www.instagram.com/cyto_talent', label: '@cyto_talent' },
-    { name: 'LinkedIn', href: socialLinks[3].href, label: 'CYTO' },
+    { name: 'LinkedIn', href: socialLinks[5].href, label: 'Cyto GH' },
   ],
   '/blacklaa': [
-    { name: 'Facebook', href: 'https://www.facebook.com/TheFinestMc', label: '@TheFinestMc' },
+    { name: 'Facebook', href: 'https://www.facebook.com/TheFinestMc', label: '@PMTheFinestMc' },
     { name: 'X', href: 'https://x.com/blaklaaa', label: '@blaklaaa' },
     { name: 'Instagram', href: 'https://www.instagram.com/blaklaaa', label: '@blaklaaa' },
-    { name: 'LinkedIn', href: socialLinks[3].href, label: 'Blaklaaa Movement' },
+    { name: 'LinkedIn', href: socialLinks[5].href, label: 'Blaklaaa Movement' },
   ],
-  '/modeling': [
-    { name: 'Facebook', href: 'https://www.facebook.com/TheFinestMc', label: '@TheFinestMc' },
-    { name: 'X', href: 'https://x.com/PmTheFinestMc', label: '@PmTheFinestMc' },
-    { name: 'Instagram', href: 'https://www.instagram.com/pmdepresenter', label: '@pmdepresenter' },
-    { name: 'LinkedIn', href: socialLinks[3].href, label: 'Modeling' },
-  ],
+  '/modeling': socialLinks,
 }
 
 export function getSocialsForPath(pathname: string): SocialLink[] {
@@ -164,37 +156,53 @@ export function getSocialsForPath(pathname: string): SocialLink[] {
 }
 
 export const contactInfo = {
-  email: 'inquiries@pmofficial.com',
-  booking: 'booking@pmofficial.com',
-  foundation: 'pmfoundation@pmofficial.com',
+  email: 'thefinestmc1@gmail.com',
+  booking: 'thefinestmc1@gmail.com',
+  foundation: 'thefinestmc1@gmail.com',
   phone: '0242903049',
   phoneAlt: '0245995333',
   location: 'Takoradi, Western Region, Ghana',
-  nanteEmail: 'nanteshoes1@gmail.com',
+  nanteEmail: 'thefinestmc1@gmail.com',
   nanteInstagram: 'https://www.instagram.com/nante_shoes',
   foundationHandle: '@pm__foundation',
+  bank: {
+    name: '',
+    accountName: 'PM Foundation',
+    accountNumber: '',
+    branch: '',
+  },
 }
 
-export const notableEvents = [
-  'TGMA Xperience Concert',
-  'Bhim Festival',
-  'Made In Taadi Concert',
-  'Storm Reigns Concert',
-  'Western Music Awards',
-  'Taadi Fashion Weekend',
-  'Western Gospel Awards',
-  'MTN Stands In Worship',
-  'Tullow Ghana End of Year Party',
-  'Access Bank End of Year Party',
-  'Cowbell Family Funfair',
-  'YFM Area Codes Jam',
-]
+function ghanaWhatsAppNumber(phone: string) {
+  const digits = phone.replace(/\D/g, '')
+  const national = digits.startsWith('0') ? digits.slice(1) : digits
+  return digits.startsWith('233') ? digits : `233${national}`
+}
 
-export const awards = [
-  'National Communications Awards 2020 — Radio Personality of the Year (first outside Greater Accra)',
-  'G-Park Awards 2014/2015 — Special Honour (Broadcaster/MC)',
-  'Sekondi-Takoradi Radio Awards 2015 — Best Reggae Show Host',
-  'Fontomfrom Amandze Awards — Volunteer Group of the Year (PM Foundation)',
-  'Ghana Lifestyle Awards 2019 — Best Event MC nominee',
-  'TTU SRC Awards 2023 — Special Honour to Alumnus MC/Broadcaster',
+export function whatsappHref(message: string) {
+  return `https://wa.me/${ghanaWhatsAppNumber(contactInfo.phone)}?text=${encodeURIComponent(message)}`
+}
+
+export const bookMcHref = whatsappHref(
+  'Hello PM,\n\nI want to book you as MC / Hypeman.\n\nPlease share availability and rates.',
+)
+
+export const notableEvents = [
+  'MTN Stands in Worship',
+  'FIFA World Cup Launch',
+  'British American Tobacco Awards',
+  'Takoradi Mall Event Centre Opening',
+  'AdansiTravels Grand Launch',
+  'MTN MoMo at 15 Launch',
+  'Food Lovers Grand Opening',
+  'Bhim Festival',
+  'TGMA Xperience',
+  'Made In Taadi Concert',
+  'Aso At 20 Concert',
+  'Dynamic Praise',
+  'Indomie Fest',
+  'Asabaako Festival',
+  'Tullow End of Year Party',
+  'Chemsolv End of Year Party',
+  'Mastercard Foundation End of Year Party',
 ]

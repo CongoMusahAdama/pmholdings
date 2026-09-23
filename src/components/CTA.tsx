@@ -1,5 +1,25 @@
+import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { StaggerGroup, StaggerItem } from './ScrollReveal'
+
+function isExternal(to: string) {
+  return /^(https?:|mailto:|tel:)/i.test(to)
+}
+
+function CtaLink({ to, className, children }: { to: string; className: string; children: ReactNode }) {
+  if (isExternal(to)) {
+    return (
+      <a href={to} target="_blank" rel="noopener noreferrer" className={className}>
+        {children}
+      </a>
+    )
+  }
+  return (
+    <Link to={to} className={className}>
+      {children}
+    </Link>
+  )
+}
 
 interface CTAProps {
   id?: string
@@ -41,13 +61,13 @@ export default function CTA({
         </StaggerItem>
         <StaggerItem>
           <div className="action-row mx-auto mt-8 max-w-md justify-center sm:max-w-none">
-            <Link to={primaryTo} className="btn-primary">
+            <CtaLink to={primaryTo} className="btn-primary">
               {primaryLabel}
-            </Link>
+            </CtaLink>
             {secondaryLabel && secondaryTo && (
-              <Link to={secondaryTo} className="btn-ghost">
+              <CtaLink to={secondaryTo} className="btn-ghost">
                 {secondaryLabel}
-              </Link>
+              </CtaLink>
             )}
           </div>
         </StaggerItem>

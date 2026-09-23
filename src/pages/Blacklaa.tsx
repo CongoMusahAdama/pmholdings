@@ -14,7 +14,9 @@ import {
 } from 'lucide-react'
 import SEO from '../components/SEO'
 import ScrollReveal, { StaggerGroup, StaggerItem } from '../components/ScrollReveal'
+import AnimatedHeading from '../components/AnimatedHeading'
 import CTA from '../components/CTA'
+import { blacklaaLineup } from '../data/upcoming'
 
 const goals = [
   {
@@ -93,7 +95,7 @@ const destinations = [
 const programmes = [
   {
     title: 'BlakTrip',
-    body: 'Twice-yearly curated journeys to Ghana’s beautiful sites — beaches, forests, forts, and living culture — with a vision to extend across Africa.',
+    body: 'Twice-yearly curated journeys to Ghana’s beautiful sites — beaches, forests, forts, and living culture. May and November, every year.',
     icon: MapPin,
   },
   {
@@ -161,13 +163,14 @@ export default function Blacklaa() {
         <div className="absolute inset-0 bg-black/55" />
 
         <div className="site-container relative z-10 flex min-h-[52svh] flex-col justify-end pb-10 pt-20 sm:pb-12 sm:pt-24 md:min-h-[58svh] md:pb-14 md:pt-28">
-          <ScrollReveal className="max-w-3xl">
+          <div className="max-w-3xl">
             <p className="mb-3 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold sm:mb-4">
               Proud to Be Black
             </p>
-            <h1 className="font-sans text-[2rem] font-bold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-[3.4rem]">
-              Blaklaaa Movement
-            </h1>
+            <AnimatedHeading
+              text="Blaklaaa Movement"
+              className="font-sans text-[2rem] font-bold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-[3.4rem]"
+            />
             <p className="mt-4 max-w-xl text-sm font-light leading-relaxed text-white/80 sm:mt-5 sm:text-base md:text-lg">
               A Pan-African call for identity, culture, and youth power — lived on air, in community,
               and on the road with BlakTrip.
@@ -180,7 +183,7 @@ export default function Blacklaa() {
                 Places We’ve Been
               </a>
             </div>
-          </ScrollReveal>
+          </div>
         </div>
       </section>
 
@@ -235,9 +238,11 @@ export default function Blacklaa() {
 
           <ScrollReveal direction="right" delay={0.08} className="lg:col-span-6">
             <p className="eyebrow mb-3">The Call</p>
-            <h2 className="font-sans text-3xl font-bold leading-tight tracking-tight text-ink md:text-4xl">
-              Pride backed by understanding
-            </h2>
+            <AnimatedHeading
+              as="h2"
+              text="Pride backed by understanding"
+              className="font-sans text-3xl font-bold leading-tight tracking-tight text-ink md:text-4xl"
+            />
             <div className="my-5 gold-divider" />
             <div className="space-y-4 text-base font-light leading-relaxed text-muted">
               <p>
@@ -271,14 +276,16 @@ export default function Blacklaa() {
               <p className="mb-3 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold">
                 BlakTrip Destinations
               </p>
-              <h2 className="font-sans text-3xl font-bold leading-tight tracking-tight text-ink md:text-4xl">
-                Places we’ve walked
-              </h2>
+              <AnimatedHeading
+                as="h2"
+                text="Places we’ve walked"
+                className="font-sans text-3xl font-bold leading-tight tracking-tight text-ink md:text-4xl"
+              />
             </ScrollReveal>
             <ScrollReveal delay={0.08} className="lg:col-span-5">
               <p className="text-base font-light text-muted">
                 Twice a year, BlakTrip takes the movement to Ghana’s sites — coast, canopy, castles,
-                and living culture — with eyes on the wider continent.
+                and living culture. May and November, every year.
               </p>
             </ScrollReveal>
           </div>
@@ -324,9 +331,11 @@ export default function Blacklaa() {
             <p className="mb-3 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold">
               In Action
             </p>
-            <h2 className="font-sans text-3xl font-bold tracking-tight text-ink md:text-4xl">
-              How the movement shows up
-            </h2>
+            <AnimatedHeading
+              as="h2"
+              text="How the movement shows up"
+              className="font-sans text-3xl font-bold tracking-tight text-ink md:text-4xl"
+            />
             <p className="mt-3 text-base font-light text-muted">
               On the road, on air, and in community — pride that moves.
             </p>
@@ -355,9 +364,11 @@ export default function Blacklaa() {
             <p className="mb-3 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold">
               Gallery
             </p>
-            <h2 className="font-sans text-3xl font-bold tracking-tight text-white md:text-4xl">
-              BlakTrip moments
-            </h2>
+            <AnimatedHeading
+              as="h2"
+              text="BlakTrip moments"
+              className="font-sans text-3xl font-bold tracking-tight text-white md:text-4xl"
+            />
             <p className="mt-3 text-base font-light text-white/60">
               Community, culture, and Ghana’s places — Blaklaaa on the move.
             </p>
@@ -388,25 +399,31 @@ export default function Blacklaa() {
         </div>
       </section>
 
-      {/* Join band */}
-      <section className="bg-gold py-12 sm:py-14 md:py-16">
-        <div className="site-container flex flex-col items-stretch justify-between gap-5 sm:gap-6 md:flex-row md:items-center">
-          <ScrollReveal direction="left" className="max-w-xl">
-            <h2 className="font-sans text-xl font-bold tracking-tight text-ink sm:text-2xl md:text-3xl">
-              Ready for the next BlakTrip?
-            </h2>
-            <p className="mt-2 text-sm font-light text-ink/75">
-              Community, campaigns, and curated journeys across Ghana — Proud to be Black.
-            </p>
-          </ScrollReveal>
-          <ScrollReveal direction="right" delay={0.08}>
-            <Link
-              to="/contact"
-              className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-ink px-7 py-3.5 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-white transition-colors hover:bg-black sm:w-auto"
-            >
-              Get Involved
-            </Link>
-          </ScrollReveal>
+      {/* Yearly lineup */}
+      <section id="upcoming" className="bg-gold py-12 sm:py-14 md:py-16">
+        <div className="site-container">
+          <p className="mb-6 text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-ink/70">
+            The lineup
+          </p>
+          <div className="grid gap-5 md:grid-cols-3">
+            {blacklaaLineup.map((event) => (
+              <article key={event.id}>
+                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-ink/60">
+                  {event.month}
+                </p>
+                <h2 className="mt-1 font-sans text-xl font-bold tracking-tight text-ink md:text-2xl">
+                  {event.title}
+                </h2>
+                <p className="mt-2 text-sm font-light leading-relaxed text-ink/75">{event.body}</p>
+              </article>
+            ))}
+          </div>
+          <Link
+            to="/contact"
+            className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-ink px-7 py-3.5 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-white transition-colors hover:bg-black"
+          >
+            Get Involved
+          </Link>
         </div>
       </section>
 

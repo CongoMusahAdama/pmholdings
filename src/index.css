@@ -59,6 +59,7 @@
 
   img {
     @apply max-w-full;
+    backface-visibility: hidden;
   }
 
   button,
@@ -87,6 +88,10 @@
 
   .btn-primary {
     @apply inline-flex min-h-11 items-center justify-center rounded-full bg-gold px-5 py-3 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-ink transition-all duration-300 hover:bg-gold-dark sm:min-h-12 sm:px-7 sm:py-3.5 sm:text-[0.72rem] sm:tracking-[0.16em];
+  }
+
+  .btn-donate {
+    @apply inline-flex min-h-12 items-center justify-center rounded-full bg-gold px-8 py-3 text-[0.78rem] font-bold uppercase tracking-[0.2em] text-ink shadow-[0_12px_28px_rgba(0,0,0,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-light hover:shadow-[0_16px_36px_rgba(0,0,0,0.32)] sm:min-h-[3.35rem] sm:px-11 sm:text-[0.82rem];
   }
 
   .btn-ghost {
@@ -261,7 +266,8 @@ html.dark .bg-gold {
   color: #1a1a1a;
 }
 
-html.dark .btn-primary {
+html.dark .btn-primary,
+html.dark .btn-donate {
   color: #1a1a1a !important;
 }
 

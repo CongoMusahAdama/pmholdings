@@ -9,11 +9,16 @@ import {
 } from 'lucide-react'
 import SEO from '../components/SEO'
 import ScrollReveal, { StaggerGroup, StaggerItem } from '../components/ScrollReveal'
+import AnimatedHeading from '../components/AnimatedHeading'
 import BrandLogo from '../components/BrandLogo'
 import FeatureCard from '../components/FeatureCard'
 import CTA from '../components/CTA'
-import { awards, brand, ventures } from '../data/ventures'
+import { awards, honours, wonCount } from '../data/awards'
+import { bookMcHref, brand, ventures } from '../data/ventures'
 import { hostedEvents } from '../data/events'
+import { radioStations } from '../data/radioShows'
+import { radioVideos, stageVideos, workLists } from '../data/videos'
+import { SocialVideoCard, YouTubeEmbed } from '../components/VideoEmbeds'
 
 const featuredEventIds = [
   'made-in-taadi-2025',
@@ -24,7 +29,6 @@ const featuredEventIds = [
   'finest-experience',
   'finest-masterclass',
   'dreams-vibes',
-  'western-content-creators',
 ] as const
 
 const featuredEvents = featuredEventIds
@@ -40,7 +44,7 @@ const pillars = [
   {
     title: 'Broadcast & Stage',
     body: 'From The DrYve on Y97.9FM to 1,000+ live events — voice, presence, and command that define The Finest MC.',
-    to: '/about#overview',
+    to: '/about#radio',
     icon: Radio,
     variant: 'white' as const,
   },
@@ -64,8 +68,8 @@ const focusAreas = [
   {
     num: '01',
     title: 'Broadcasting',
-    body: 'The DrYve of Your Lyfe — Y97.9FM, weekdays 3–7 PM.',
-    to: '/about#overview',
+    body: 'YFM Takoradi and Radio Maxx — from Roots & Revival to The DrYve.',
+    to: '/about#radio',
   },
   {
     num: '02',
@@ -76,7 +80,7 @@ const focusAreas = [
   {
     num: '03',
     title: 'Consulting',
-    body: 'PM Entertainment Consult — bookings, talent, masterclasses.',
+    body: 'PM Entertainment Consult — events, PR, activations, and branding. Talent through Cyto GH.',
     to: '/pm-entertainment',
   },
   {
@@ -112,22 +116,23 @@ export default function About() {
       {/* Centered intro — reference-style hero */}
       <section className="bg-white pb-10 pt-14 md:pb-12 md:pt-20">
         <div className="site-container text-center">
-          <ScrollReveal>
+          <div>
             <div className="mb-7 flex justify-center">
               <BrandLogo className="h-28 w-28 md:h-36 md:w-36 lg:h-40 lg:w-40" />
             </div>
             <p className="mb-5 text-sm font-semibold uppercase tracking-[0.32em] text-gold md:text-base md:tracking-[0.36em]">
               About {brand.stageName}
             </p>
-            <h1 className="mx-auto max-w-4xl font-sans text-4xl font-bold leading-[1.12] tracking-tight text-ink sm:text-5xl md:text-6xl lg:text-[3.75rem]">
-              Excellence is My Hallmark.{' '}
-              <span className="text-muted/55">Purpose drives everything else.</span>
-            </h1>
+            <AnimatedHeading
+              text="Excellence is My Hallmark."
+              mutedText="Purpose drives everything else."
+              className="mx-auto max-w-4xl font-sans text-4xl font-bold leading-[1.12] tracking-tight text-ink sm:text-5xl md:text-6xl lg:text-[3.75rem]"
+            />
             <p className="mx-auto mt-6 max-w-2xl text-base font-light leading-relaxed text-muted md:text-lg">
               Nana Quasi-Wusu — professionally known as PM, The Finest MC. Broadcaster, hypeman,
               humanitarian, fashion model, and entertainment consultant from Takoradi, Ghana.
             </p>
-          </ScrollReveal>
+          </div>
         </div>
       </section>
 
@@ -142,20 +147,20 @@ export default function About() {
                     <Mic2 className="h-3.5 w-3.5" />
                     The Finest MC
                   </p>
-                  <h2 className="font-sans text-3xl font-bold leading-tight md:text-4xl lg:text-[2.65rem]">
-                    Strategy on air.
-                    <br />
-                    Energy on stage.
-                  </h2>
+                  <AnimatedHeading
+                    as="h2"
+                    text="Strategy on air. Energy on stage."
+                    className="font-sans text-3xl font-bold leading-tight md:text-4xl lg:text-[2.65rem]"
+                  />
                   <p className="mt-5 max-w-md text-sm font-light leading-relaxed text-white/70 md:text-base">
                     From Y97.9FM’s The DrYve to TGMA, Bhim Fest, and Made In Taadi — PM builds
                     moments with polish, presence, and purpose. Civil engineer by training. Hallmark
                     entertainer by craft.
                   </p>
                   <div className="action-row mt-8">
-                    <Link to="/contact" className="btn-primary gap-2">
+                    <a href={bookMcHref} target="_blank" rel="noopener noreferrer" className="btn-primary gap-2">
                       Book PM
-                    </Link>
+                    </a>
                     <Link to="/gallery" className="btn-ghost-light gap-2">
                       See Gallery
                     </Link>
@@ -177,7 +182,7 @@ export default function About() {
                       {awards[0]?.split(' — ')[0] ?? 'National Communications Awards'}
                     </p>
                     <Link
-                      to="/#ventures"
+                      to="/about/awards/national-communications-awards-2020"
                       className="mt-1 inline-flex items-center gap-1 text-xs text-white/50 transition-colors hover:text-gold"
                     >
                       See Details
@@ -226,10 +231,12 @@ export default function About() {
               <p className="mb-3 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold">
                 Biography
               </p>
-              <h2 className="font-sans text-3xl font-bold leading-tight text-ink md:text-4xl lg:text-[2.75rem]">
-                The story behind{' '}
-                <span className="text-muted/55">The Finest MC</span>
-              </h2>
+              <AnimatedHeading
+                as="h2"
+                text="The story behind"
+                mutedText="The Finest MC"
+                className="font-sans text-3xl font-bold leading-tight text-ink md:text-4xl lg:text-[2.75rem]"
+              />
             </ScrollReveal>
             <ScrollReveal delay={0.08} className="lg:col-span-6">
               <p className="text-base font-light leading-relaxed text-muted md:text-lg">
@@ -250,15 +257,17 @@ export default function About() {
               <p>
                 Trained as a Civil Engineer, PM entered radio on 21 April 2014 at Y97.9FM under the
                 guidance of Mr Julius Hamenoo, rising from producer to presenter. He has hosted
-                flagship shows including Roots & Revival, Y Campus Express, and currently The DrYve
-                of Your Lyfe. In 2020 he became Radio Personality of the Year at the National
-                Communications Awards — the first broadcaster outside Greater Accra to win that
-                honour.
+                flagship shows including Roots & Revival, Y Campus Express, Shouts On Y, and
+                currently The DrYve of Your Lyfe. In 2018 he also held the board at Radio Maxx —
+                from Super Morning Show to Maxx OverDrive. In 2020 he became Radio Personality of
+                the Year at the National Communications Awards — the first broadcaster outside
+                Greater Accra to win that honour.
               </p>
               <p>
                 Parallel to broadcasting, PM has spent over fifteen years as a professional MC and
-                hypeman, hosting 1,000+ events. Through PM Entertainment Consult he guides talent
-                and stages masterclasses. Giving became structure on his 30th birthday through PM
+                hypeman, hosting 1,000+ events. Through Cyto GH — the talent house of PM
+                Entertainment Consult — he guides talent and stages masterclasses. Giving became
+                structure on his 30th birthday through PM
                 Foundation, co-founded with Joycelyn Odeebea Ampofo — alongside Blaklaaa and
                 fashion work through Nantegh.
               </p>
@@ -275,7 +284,7 @@ export default function About() {
               </blockquote>
 
               <ul className="mt-5 space-y-3">
-                {awards.slice(0, 3).map((award) => (
+                {awards.filter((line) => line.includes('(Won)')).slice(0, 3).map((award) => (
                   <li
                     key={award}
                     className="rounded-2xl border border-line bg-off px-5 py-4 text-xs font-light leading-relaxed text-muted"
@@ -289,14 +298,156 @@ export default function About() {
         </div>
       </section>
 
+      {/* Radio shows hosted */}
+      <section id="radio" className="bg-off py-16 md:py-24">
+        <div className="site-container">
+          <ScrollReveal className="mx-auto mb-12 max-w-2xl text-center md:mb-14">
+            <p className="mb-3 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold">
+              On Air
+            </p>
+            <AnimatedHeading
+              as="h2"
+              text="Radio Shows Hosted"
+              className="font-sans text-3xl font-bold tracking-tight text-ink md:text-4xl"
+            />
+            <p className="mt-4 text-base font-light text-muted">
+              From a first reggae show in 2014 to drivetime on YFM — and a full 2018 slate on Radio
+              Maxx.
+            </p>
+          </ScrollReveal>
+
+          <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
+            {radioStations.map((station) => (
+              <ScrollReveal key={station.station}>
+                <article className="h-full overflow-hidden rounded-[1.5rem] border border-line bg-white">
+                  <div className="flex items-center justify-between gap-4 border-b border-line bg-ink px-6 py-5 md:px-7">
+                    <div>
+                      <p className="font-sans text-lg font-bold text-white md:text-xl">
+                        {station.station}
+                      </p>
+                      <p className="mt-1 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-gold">
+                        {station.period}
+                      </p>
+                    </div>
+                    <span className="flex h-11 w-11 items-center justify-center rounded-full bg-gold text-ink">
+                      <Radio className="h-5 w-5" strokeWidth={1.75} />
+                    </span>
+                  </div>
+                  <ol className="divide-y divide-line">
+                    {station.shows.map((show, i) => (
+                      <li key={show.name} className="flex gap-4 px-6 py-4 md:px-7">
+                        <span className="mt-0.5 font-sans text-sm font-bold text-gold">
+                          {String(i + 1).padStart(2, '0')}
+                        </span>
+                        <div className="min-w-0 flex-1">
+                          <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                            <h3 className="font-sans text-base font-bold text-ink">{show.name}</h3>
+                            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-muted">
+                              {show.year}
+                            </p>
+                          </div>
+                          <p className="mt-1 text-sm font-light text-muted">{show.slot}</p>
+                          {show.note ? (
+                            <p className="mt-1 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-gold">
+                              {show.note}
+                            </p>
+                          ) : null}
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                </article>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <div className="mt-12">
+            <p className="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold">
+              Radio videos
+            </p>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {radioVideos.map((video) => (
+                <YouTubeEmbed key={video.id} video={video} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Awards & nominations */}
+      <section id="awards" className="bg-white py-16 md:py-24">
+        <div className="site-container">
+          <ScrollReveal className="mx-auto mb-12 max-w-2xl text-center md:mb-14">
+            <p className="mb-3 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold">
+              Recognition
+            </p>
+            <AnimatedHeading
+              as="h2"
+              text="Awards & Nominations"
+              className="font-sans text-3xl font-bold tracking-tight text-ink md:text-4xl"
+            />
+            <p className="mt-4 text-base font-light text-muted">
+              {wonCount} wins across radio, stage, youth leadership, and humanitarian work — plus
+              national and regional nominations.
+            </p>
+          </ScrollReveal>
+
+          <ol className="grid gap-4 md:grid-cols-2">
+            {honours.map((honour, i) => (
+              <li key={honour.id}>
+                <Link
+                  to={`/about/awards/${honour.id}`}
+                  className="flex h-full w-full gap-4 rounded-[1.25rem] border border-line bg-off/60 p-5 text-left transition-colors hover:border-gold md:p-6"
+                >
+                  <span className="font-sans text-sm font-bold text-gold">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                      <h3 className="font-sans text-base font-bold leading-snug text-ink">
+                        {honour.body}
+                      </h3>
+                      <p className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-muted">
+                        {honour.years}
+                      </p>
+                    </div>
+                    <ul className="mt-3 space-y-2">
+                      {honour.categories.map((cat) => (
+                        <li
+                          key={cat.name}
+                          className="flex flex-wrap items-center justify-between gap-2"
+                        >
+                          <p className="text-sm font-light text-muted">{cat.name}</p>
+                          <span
+                            className={`rounded-full px-2.5 py-0.5 text-[0.62rem] font-semibold uppercase tracking-[0.12em] ${
+                              cat.result === 'Won'
+                                ? 'bg-gold text-ink'
+                                : 'border border-line bg-white text-muted'
+                            }`}
+                          >
+                            {cat.result}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
       {/* Philosophy / pillars — impact */}
       <section id="pillars" className="bg-off py-16 md:py-24">
         <div className="site-container">
           <ScrollReveal className="mx-auto mb-12 max-w-3xl text-center md:mb-14">
-            <h2 className="font-sans text-3xl font-bold leading-tight text-ink md:text-4xl lg:text-5xl">
-              Built on craft.{' '}
-              <span className="text-muted/55">Driven by impact.</span>
-            </h2>
+            <AnimatedHeading
+              as="h2"
+              text="Built on craft."
+              mutedText="Driven by impact."
+              className="font-sans text-3xl font-bold leading-tight text-ink md:text-4xl lg:text-5xl"
+            />
             <p className="mx-auto mt-4 max-w-xl text-base font-light text-muted">
               Three lanes that shape how PM shows up — on air, on stage, and in community.
             </p>
@@ -325,9 +476,11 @@ export default function About() {
             <p className="mb-3 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold">
               What He Does
             </p>
-            <h2 className="font-sans text-2xl font-bold text-white md:text-3xl">
-              Four lanes. One hallmark.
-            </h2>
+            <AnimatedHeading
+              as="h2"
+              text="Four lanes. One hallmark."
+              className="font-sans text-2xl font-bold text-white md:text-3xl"
+            />
           </ScrollReveal>
 
           <StaggerGroup className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0" alternate stagger={0.05}>
@@ -364,9 +517,11 @@ export default function About() {
             <p className="mb-3 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold">
               Ventures
             </p>
-            <h2 className="font-sans text-3xl font-bold leading-tight text-ink md:text-4xl lg:text-[2.75rem]">
-              Everything he builds under one hallmark
-            </h2>
+            <AnimatedHeading
+              as="h2"
+              text="Everything he builds under one hallmark"
+              className="font-sans text-3xl font-bold leading-tight text-ink md:text-4xl lg:text-[2.75rem]"
+            />
             <p className="mx-auto mt-4 max-w-2xl text-base font-light leading-relaxed text-muted">
               Entertainment, philanthropy, fashion, talent, culture, and modeling — six brands
               shaped by excellence and purpose.
@@ -439,10 +594,12 @@ export default function About() {
               <p className="mb-3 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold">
                 Stages
               </p>
-              <h2 className="font-sans text-3xl font-bold leading-tight text-ink md:text-4xl lg:text-5xl">
-                Events he’s been{' '}
-                <span className="text-muted/55">invited to</span>
-              </h2>
+              <AnimatedHeading
+                as="h2"
+                text="Events he’s been"
+                mutedText="invited to"
+                className="font-sans text-3xl font-bold leading-tight text-ink md:text-4xl lg:text-5xl"
+              />
             </ScrollReveal>
             <ScrollReveal delay={0.08} className="lg:col-span-5">
               <p className="text-base font-light leading-relaxed text-muted">
@@ -515,6 +672,59 @@ export default function About() {
               </Link>
             </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Named stages + social clips */}
+      <section id="watch" className="bg-off py-16 md:py-24">
+        <div className="site-container">
+          <ScrollReveal className="mx-auto mb-12 max-w-2xl text-center md:mb-14">
+            <p className="mb-3 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold">
+              On Stage
+            </p>
+            <AnimatedHeading
+              as="h2"
+              text="Corporate, concerts & clips"
+              className="font-sans text-3xl font-bold tracking-tight text-ink md:text-4xl"
+            />
+            <p className="mt-4 text-base font-light text-muted">
+              Selected bookings — plus live clips from TikTok and Instagram.
+            </p>
+          </ScrollReveal>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {workLists.map((list) => (
+              <article
+                key={list.id}
+                className="overflow-hidden rounded-[1.5rem] border border-line bg-white"
+              >
+                <div className="border-b border-line bg-ink px-5 py-4">
+                  <p className="font-sans text-base font-bold text-white">{list.label}</p>
+                </div>
+                <ol className="divide-y divide-line">
+                  {list.items.map((item, i) => (
+                    <li key={item} className="flex gap-3 px-5 py-3">
+                      <span className="font-sans text-xs font-bold text-gold">
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                      <p className="text-sm font-medium text-ink">{item}</p>
+                    </li>
+                  ))}
+                </ol>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-12">
+            <p className="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold">
+              Watch
+            </p>
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+              {stageVideos.map((video) => (
+                <SocialVideoCard key={video.id} video={video} />
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

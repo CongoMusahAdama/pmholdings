@@ -12,17 +12,6 @@ export interface HostedEvent {
 /** Notable stages PM has hosted / been invited to — sourced from YFM & press profiles */
 export const hostedEvents: HostedEvent[] = [
   {
-    id: 'western-content-creators',
-    name: 'Western Content Creators Seminar',
-    role: 'Organiser / Host',
-    year: '2026',
-    location: 'Western Region',
-    summary:
-      'Upcoming #WCCS2026 seminar by PM Entertainment Consult for content creators across the Western Region — sponsorship and partnership enquiries open.',
-    flyer: '/images/events/western-content-creators.jpg',
-    category: 'Own Event',
-  },
-  {
     id: 'made-in-taadi-2025',
     name: 'Made In Taadi Concert',
     role: 'Host / MC (4th time)',
@@ -78,13 +67,24 @@ export const hostedEvents: HostedEvent[] = [
     category: 'Awards',
   },
   {
+    id: 'afrin-party',
+    name: 'Afrin Party',
+    role: 'Creator & Host',
+    year: 'January',
+    location: 'Takoradi',
+    summary:
+      'January opener on the PM Entertainment calendar — a signature night of music, energy, and The Finest MC.',
+    flyer: '/images/ev.jpg',
+    category: 'Own Event',
+  },
+  {
     id: 'finest-experience',
     name: 'The Finest Experience',
     role: 'Creator & Host',
-    year: '2024, 2025',
+    year: 'September',
     location: 'Replay / Swagga, Takoradi',
     summary:
-      'PM Entertainment Consult’s signature night — DJs paired with hypemen, climaxing his 10- and 15-year celebrations.',
+      'PM Entertainment Consult’s signature September night — DJs paired with hypemen, climaxing his 10- and 15-year celebrations.',
     flyer: '/images/press-portrait-2.jpg',
     category: 'Own Event',
   },
@@ -219,7 +219,7 @@ export const hostedEvents: HostedEvent[] = [
     id: 'dine-street',
     name: 'Dine With The Street',
     role: 'Founder / Host',
-    year: 'Ongoing',
+    year: 'December',
     location: 'Takoradi',
     summary:
       'PM Foundation flagship outreach — feeding, care, and dignity for communities on the street.',
@@ -230,10 +230,10 @@ export const hostedEvents: HostedEvent[] = [
     id: 'pint-4-life',
     name: 'A Pint 4 A Life',
     role: 'Founder / Lead',
-    year: 'Ongoing',
+    year: 'March',
     location: 'Western Region',
     summary:
-      'PM Foundation blood donation drive — mobilising communities to give blood and save lives.',
+      'PM Foundation blood donation drive each March — mobilising communities to give blood and save lives.',
     flyer: '/images/foundation.jpg',
     category: 'Own Event',
   },
@@ -241,11 +241,22 @@ export const hostedEvents: HostedEvent[] = [
     id: 'walk-with-pm',
     name: 'A Walk With PM',
     role: 'Organiser / Face',
-    year: '2024',
+    year: 'October',
     location: 'Takoradi Mall route',
     summary:
-      'Community walk celebrating 10 years in broadcasting — fitness, awareness, and Blaklaaa pride.',
+      'October community walk — fitness, awareness, and Blaklaaa pride through the city.',
     flyer: '/images/portrait-broadcast.jpg',
     category: 'Own Event',
+  },
+  {
+    id: 'blak-trip',
+    name: 'Blak Trip',
+    role: 'Organiser / Face',
+    year: 'May & November',
+    location: 'Ghana',
+    summary:
+      'Twice a year, Blaklaaa hits the road — a curated journey to Ghana’s sites, culture, and heritage.',
+    flyer: '/images/blakla1.jpg',
+    category: 'Tour',
   },
 ]

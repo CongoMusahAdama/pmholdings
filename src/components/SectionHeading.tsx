@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import type { ReactNode } from 'react'
+import AnimatedHeading from './AnimatedHeading'
 
 interface SectionHeadingProps {
   eyebrow?: string
@@ -7,6 +8,7 @@ interface SectionHeadingProps {
   description?: string
   align?: 'left' | 'center' | 'split'
   className?: string
+  titleClassName?: string
   eyebrowIcon?: ReactNode
 }
 
@@ -15,17 +17,16 @@ const ease = [0.22, 1, 0.36, 1] as const
 const container = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.12, delayChildren: 0.05 },
+    transition: { staggerChildren: 0.1, delayChildren: 0.02 },
   },
 }
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 26, filter: 'blur(6px)' },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    filter: 'blur(0px)',
-    transition: { duration: 0.85, ease },
+    transition: { duration: 0.65, ease },
   },
 }
 
@@ -34,7 +35,7 @@ const divider = {
   visible: {
     opacity: 1,
     scaleX: 1,
-    transition: { duration: 0.9, ease, delay: 0.05 },
+    transition: { duration: 0.75, ease, delay: 0.12 },
   },
 }
 
@@ -44,6 +45,7 @@ export default function SectionHeading({
   description,
   align = 'left',
   className = '',
+  titleClassName = '',
   eyebrowIcon,
 }: SectionHeadingProps) {
   if (align === 'split') {
@@ -65,12 +67,11 @@ export default function SectionHeading({
               {eyebrow}
             </motion.p>
           )}
-          <motion.h2
-            variants={fadeUp}
-            className="max-w-xl font-sans text-4xl font-bold leading-[1.1] tracking-tight text-ink md:text-5xl lg:text-[3.35rem]"
-          >
-            {title}
-          </motion.h2>
+          <AnimatedHeading
+            as="h2"
+            text={title}
+            className={`max-w-xl font-sans text-4xl font-bold leading-[1.1] tracking-tight text-ink md:text-5xl lg:text-[3.35rem] ${titleClassName}`}
+          />
         </div>
         <div className="lg:col-span-5">
           {description && (
@@ -103,22 +104,19 @@ export default function SectionHeading({
       {eyebrow && (
         <motion.p
           variants={fadeUp}
-          className={`mb-3 inline-flex items-center gap-2 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold ${
-            centered ? '' : ''
-          }`}
+          className="mb-3 inline-flex items-center gap-2 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold"
         >
           {eyebrowIcon}
           {eyebrow}
         </motion.p>
       )}
-      <motion.h2
-        variants={fadeUp}
+      <AnimatedHeading
+        as="h2"
+        text={title}
         className={`font-sans text-3xl font-bold leading-tight tracking-tight text-ink md:text-4xl lg:text-[2.65rem] ${
           centered ? '' : 'max-w-xl'
-        }`}
-      >
-        {title}
-      </motion.h2>
+        } ${titleClassName}`}
+      />
       <motion.div
         variants={divider}
         className={`my-5 h-[2px] w-12 bg-gold ${centered ? 'mx-auto origin-center' : 'origin-left'}`}

@@ -1,39 +1,41 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 
 const slides = [
   {
-    src: '/images/portrait-suit.webp',
+    src: '/images/about.jpg',
     label: 'The Finest MC',
-    caption: 'MasterClass & Mentorship',
-    position: '68% 28%',
+    caption: 'Broadcast & Stage Presence',
+    position: 'center 18%',
   },
   {
-    src: '/images/donation-kith.jpg',
+    src: '/images/foundation45.jpg',
     label: 'PM Foundation',
     caption: 'Donation & Community Service',
-    position: '72% 22%',
+    position: 'center 30%',
   },
   {
     src: '/images/modeling-kente.webp',
     label: 'Fashion & Modeling',
     caption: 'Style, Culture, Presence',
-    position: '70% 18%',
+    position: 'center 32%',
   },
   {
-    src: '/images/hero-celebration.webp',
+    src: '/images/mc.jpg',
     label: 'Live Entertainment',
     caption: '15 Years of Excellence',
-    position: '78% 30%',
+    position: 'center 22%',
   },
   {
     src: '/images/blaklaaa.jpg',
     label: 'Blaklaaa Movement',
     caption: 'Proud to Be Black',
-    position: '50% 35%',
+    position: 'center 28%',
   },
 ]
+
+const SLIDE_MS = 5200
 
 interface HeroProps {
   eyebrow?: string
@@ -73,6 +75,7 @@ export default function Hero({
 }: HeroProps) {
   const [index, setIndex] = useState(0)
   const words = title.trim().split(/\s+/)
+  const active = slides[index]
 
   useEffect(() => {
     slides.forEach((slide) => {
@@ -84,40 +87,43 @@ export default function Hero({
   useEffect(() => {
     const id = window.setInterval(() => {
       setIndex((i) => (i + 1) % slides.length)
-    }, 4500)
+    }, SLIDE_MS)
     return () => window.clearInterval(id)
-  }, [])
+  }, [index])
 
   return (
     <div>
       <section id="hero" className="relative min-h-[72svh] overflow-hidden bg-ink md:min-h-[78svh]">
+        {/* Full-bleed carousel */}
         <div className="absolute inset-0">
-          {slides.map((slide, i) => (
+          <AnimatePresence initial={false} mode="sync">
             <motion.div
-              key={slide.src}
+              key={active.src}
               className="absolute inset-0"
-              initial={false}
-              animate={{
-                opacity: i === index ? 1 : 0,
-                scale: i === index ? 1 : 1.05,
-              }}
-              transition={{ duration: 1.15, ease }}
-              style={{ zIndex: i === index ? 1 : 0 }}
-              aria-hidden={i !== index}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.25, ease }}
             >
-              <img
-                src={slide.src}
-                alt={i === index ? `${slide.label} — Nana Quasi-Wusu (PM)` : ''}
-                className="h-full w-full object-cover"
-                style={{ objectPosition: slide.position }}
+              <motion.img
+                src={active.src}
+                alt={`${active.label} — Nana Quasi-Wusu (PM)`}
+                className="h-full w-full object-cover will-change-transform"
+                style={{ objectPosition: active.position }}
                 decoding="async"
-                fetchPriority={i === 0 ? 'high' : 'low'}
+                fetchPriority={index === 0 ? 'high' : 'low'}
+                sizes="100vw"
+                initial={{ scale: 1, x: '0%' }}
+                animate={{ scale: 1.025, x: '-0.4%' }}
+                transition={{ duration: SLIDE_MS / 1000, ease: 'linear' }}
               />
             </motion.div>
-          ))}
+          </AnimatePresence>
         </div>
 
-        <div className="absolute inset-0 z-[2] bg-black/40" />
+        {/* Atmosphere overlays */}
+        <div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-r from-black/70 via-black/45 to-black/25" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-1/3 bg-gradient-to-t from-black/50 to-transparent" />
 
         <div className="site-container relative z-[3] flex min-h-[72svh] flex-col justify-center py-16 md:min-h-[78svh] md:py-20">
           <div className="max-w-xl text-left md:max-w-lg lg:max-w-xl">
@@ -138,7 +144,10 @@ export default function Hero({
               aria-label={title}
             >
               {words.map((word, i) => (
-                <span key={`${word}-${i}`} className="mr-[0.28em] inline-block overflow-hidden last:mr-0">
+                <span
+                  key={`${word}-${i}`}
+                  className="mr-[0.28em] inline-block overflow-hidden last:mr-0"
+                >
                   <motion.span className="inline-block" variants={titleWord}>
                     {word}
                   </motion.span>
@@ -165,6 +174,63 @@ export default function Hero({
                 {ctaLabel}
               </Link>
             </motion.div>
+          </div>
+        </div>
+
+        {/* Carousel controls — bottom */}
+        <div className="site-container absolute inset-x-0 bottom-0 z-[4] pb-6 md:pb-8">
+          <div className="flex items-end justify-between gap-6">
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={active.label}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.4, ease }}
+                className="hidden text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-white/70 sm:block"
+              >
+                <span className="text-gold">{String(index + 1).padStart(2, '0')}</span>
+                <span className="mx-2 text-white/35">/</span>
+                <span className="text-white/45">
+                  {String(slides.length).padStart(2, '0')}
+                </span>
+                <span className="mx-3 text-white/25">—</span>
+                {active.label}
+              </motion.p>
+            </AnimatePresence>
+
+            <div
+              className="ml-auto flex items-center gap-2"
+              role="tablist"
+              aria-label="Hero slides"
+            >
+              {slides.map((slide, i) => {
+                const isActive = i === index
+                return (
+                  <button
+                    key={slide.src}
+                    type="button"
+                    role="tab"
+                    aria-selected={isActive}
+                    aria-label={`Show ${slide.label}`}
+                    onClick={() => setIndex(i)}
+                    className={`relative h-1 overflow-hidden rounded-full transition-all duration-300 ${
+                      isActive ? 'w-10 bg-white/25' : 'w-5 bg-white/30 hover:bg-white/50'
+                    }`}
+                  >
+                    {isActive && (
+                      <motion.span
+                        key={index}
+                        className="absolute inset-y-0 left-0 w-full origin-left bg-gold"
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: 1 }}
+                        transition={{ duration: SLIDE_MS / 1000, ease: 'linear' }}
+                      />
+                    )}
+                  </button>
+                )
+              })}
+            </div>
           </div>
         </div>
       </section>

@@ -2,7 +2,7 @@ import { useEffect, useState, type ReactNode } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ChevronDown, Mail, MapPin, Menu, Phone, X } from 'lucide-react'
-import { brand, contactInfo, getLogoForPath, getSocialsForPath, ventures } from '../data/ventures'
+import { bookMcHref, brand, contactInfo, getLogoForPath, getSocialsForPath, ventures } from '../data/ventures'
 import { navPages } from '../data/navSections'
 import BrandLogo from './BrandLogo'
 import SocialIconLinks from './SocialIcons'
@@ -106,7 +106,9 @@ export default function Navbar() {
           <nav className="flex flex-1 items-center gap-0.5">
             {navPages.map((page) => {
               const isOpen = openMenu === page.to
-              const isActive = location.pathname === page.to
+              const isActive =
+                location.pathname === page.to ||
+                (page.to !== '/' && location.pathname.startsWith(`${page.to}/`))
 
               return (
                 <div
@@ -118,7 +120,7 @@ export default function Navbar() {
                   <NavLink
                     to={page.to}
                     end={page.to === '/'}
-                    className={`inline-flex items-center gap-1 whitespace-nowrap px-3 py-2 text-[0.78rem] font-semibold uppercase tracking-[0.06em] transition-colors xl:px-3.5 ${
+                    className={`inline-flex items-center gap-1 whitespace-nowrap px-2 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.04em] transition-colors xl:px-2.5 ${
                       isActive || isOpen
                         ? 'nav-chip bg-white text-ink'
                         : 'text-ink hover:bg-white/25'
@@ -177,12 +179,14 @@ export default function Navbar() {
             })}
           </nav>
 
-          <Link
-            to="/contact"
+          <a
+            href={bookMcHref}
+            target="_blank"
+            rel="noopener noreferrer"
             className="nav-chip inline-flex shrink-0 items-center bg-white px-5 py-2.5 text-[0.75rem] font-bold uppercase tracking-[0.08em] text-ink transition-colors hover:bg-ink hover:text-white"
           >
             Book Now
-          </Link>
+          </a>
         </div>
       </div>
 
@@ -202,7 +206,9 @@ export default function Navbar() {
             >
               <ul>
                 {navPages.map((page) => {
-                  const active = location.pathname === page.to
+                  const active =
+                    location.pathname === page.to ||
+                    (page.to !== '/' && location.pathname.startsWith(`${page.to}/`))
                   const expanded = mobileExpanded === page.to
                   const hasSections = page.sections.length > 0
 
@@ -268,13 +274,15 @@ export default function Navbar() {
                 })}
               </ul>
 
-              <Link
-                to="/contact"
+              <a
+                href={bookMcHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setMobileOpen(false)}
                 className="btn-primary mt-5 w-full"
               >
                 Book Now
-              </Link>
+              </a>
             </nav>
           </motion.div>
         )}

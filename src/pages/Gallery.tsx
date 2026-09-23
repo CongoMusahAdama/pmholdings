@@ -4,12 +4,14 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 import SEO from '../components/SEO'
 import CTA from '../components/CTA'
+import AnimatedHeading from '../components/AnimatedHeading'
 import {
   galleryCategories,
   galleryItems,
   type GalleryCategory,
   type GalleryItem,
 } from '../data/gallery'
+import { bookMcHref } from '../data/ventures'
 
 const heroSlides = [
   { src: '/images/c5.jpg', position: '72% 18%', label: 'Indomie Fest' },
@@ -144,9 +146,10 @@ export default function Gallery() {
               <p className="mb-3 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold">
                 Visual Archive
               </p>
-              <h1 className="font-sans text-[2rem] font-bold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
-                The Gallery
-              </h1>
+              <AnimatedHeading
+                text="The Gallery"
+                className="font-sans text-[2rem] font-bold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl"
+              />
               <p className="mt-3 max-w-lg text-sm font-light leading-relaxed text-white/75 sm:mt-4 sm:text-base md:text-lg">
                 Stages, radio, foundation, fashion, and culture — {galleryItems.length} moments from
                 the story of Nana Quasi-Wusu (PM).
@@ -305,7 +308,9 @@ export default function Gallery() {
                   className="h-full w-full object-cover"
                   style={{ objectPosition: 'center 18%' }}
                   loading="lazy"
-                  whileHover={{ scale: 1.06 }}
+                  decoding="async"
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                  whileHover={{ scale: 1.03 }}
                   transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
                 />
                 <span className="pointer-events-none absolute inset-0 bg-black/25 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -327,9 +332,9 @@ export default function Gallery() {
           <Link to="/about#events" className="btn-primary">
             See Event Stages
           </Link>
-          <Link to="/contact" className="btn-ghost">
+          <a href={bookMcHref} target="_blank" rel="noopener noreferrer" className="btn-ghost">
             Book PM
-          </Link>
+          </a>
         </div>
       </section>
 
@@ -396,6 +401,7 @@ export default function Gallery() {
                   src={active.src}
                   alt={active.alt}
                   className="max-h-[70svh] w-full object-contain md:max-h-[94svh]"
+                  decoding="async"
                 />
               </div>
               <div className="flex w-full shrink-0 flex-col justify-between border-t border-white/10 p-5 md:w-[260px] md:border-l md:border-t-0 md:p-6 lg:w-[300px]">
@@ -414,13 +420,15 @@ export default function Gallery() {
                   <p className="text-xs text-white/40">
                     {activeIndex + 1} / {items.length}
                   </p>
-                  <Link
-                    to="/contact"
+                  <a
+                    href={bookMcHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="bg-gold px-5 py-2.5 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-white transition hover:bg-gold-dark"
                     onClick={() => setActive(null)}
                   >
                     Book PM
-                  </Link>
+                  </a>
                 </div>
               </div>
             </motion.div>

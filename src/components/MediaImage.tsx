@@ -32,6 +32,8 @@ export default function MediaImage({
         className="h-full w-full object-cover"
         style={{ objectPosition }}
         loading="lazy"
+        decoding="async"
+        sizes="(min-width: 1024px) 50vw, 100vw"
       />
     </div>
   )

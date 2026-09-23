@@ -50,6 +50,28 @@ function XIcon({ className }: { className?: string }) {
   )
 }
 
+function TikTokIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <path
+        fill="#000000"
+        d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.44a2.89 2.89 0 01-2.88 2.88 2.89 2.89 0 01-2.88-2.88 2.89 2.89 0 012.88-2.88c.28 0 .56.04.82.12V9.17a6.33 6.33 0 00-.82-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.73a8.18 8.18 0 004.77 1.52V6.79a4.84 4.84 0 01-1-.1z"
+      />
+    </svg>
+  )
+}
+
+function YouTubeIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <path
+        fill="#FF0000"
+        d="M23.5 6.19a3.02 3.02 0 00-2.12-2.14C19.54 3.59 12 3.59 12 3.59s-7.54 0-9.38.46A3.02 3.02 0 00.5 6.19 31.6 31.6 0 000 12a31.6 31.6 0 00.5 5.81 3.02 3.02 0 002.12 2.14c1.84.46 9.38.46 9.38.46s7.54 0 9.38-.46a3.02 3.02 0 002.12-2.14A31.6 31.6 0 0024 12a31.6 31.6 0 00-.5-5.81zM9.75 15.57V8.43L15.84 12l-6.09 3.57z"
+      />
+    </svg>
+  )
+}
+
 function LinkedInIcon({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
@@ -78,6 +100,10 @@ export function SocialIcon({
       return <XIcon className={cls} />
     case 'LinkedIn':
       return <LinkedInIcon className={cls} />
+    case 'TikTok':
+      return <TikTokIcon className={cls} />
+    case 'YouTube':
+      return <YouTubeIcon className={cls} />
     default:
       return null
   }
@@ -100,7 +126,7 @@ function SocialAnchor({
       title={link.label ? `${link.name}, ${link.label}` : link.name}
       aria-label={link.name}
       className={`inline-flex shrink-0 items-center justify-center rounded-full transition-transform hover:scale-110 ${
-        onDark || link.name === 'X' ? 'bg-white p-1.5 shadow-sm' : 'p-0.5'
+        onDark || link.name === 'X' || link.name === 'TikTok' ? 'bg-white p-1.5 shadow-sm' : 'p-0.5'
       }`}
     >
       <SocialIcon name={link.name} size={size} />

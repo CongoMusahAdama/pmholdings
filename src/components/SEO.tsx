@@ -47,7 +47,7 @@ export default function SEO({
     'Takoradi MC',
     'Y97.9FM',
     'The DrYve',
-    'Cyto Records',
+    'Cyto GH',
     'Blaklaaa',
     'Nantegh',
   ].join(', ')
@@ -73,8 +73,11 @@ export default function SEO({
     },
     sameAs: [
       'https://www.facebook.com/TheFinestMc',
-      'https://x.com/PmTheFinestMc',
-      'https://www.instagram.com/pmdepresenter',
+      'https://x.com/pmthefinestmc',
+      'https://www.instagram.com/pmthefinestmc',
+      'https://www.tiktok.com/@pmthefinestmc',
+      'https://www.youtube.com/@pmthefinestmc',
+      'https://www.linkedin.com/in/nana-quasi-wusu-pm-%F0%9F%87%AC%F0%9F%87%AD-9529b2102',
     ],
   }
 
@@ -86,7 +89,7 @@ export default function SEO({
     url: SITE_URL,
     logo: DEFAULT_IMAGE,
     description:
-      'PM Holdings is the brand home of Nana Quasi-Wusu (PM) — The Finest MC — covering PM Foundation, PM Entertainment, Cyto Records, Blaklaaa, Nantegh and Modeling.',
+      'PM Holdings is the brand home of Nana Quasi-Wusu (PM) — The Finest MC — covering PM Foundation, PM Entertainment, Cyto GH, Blaklaaa, Nantegh and Modeling.',
     founder: {
       '@type': 'Person',
       name: brand.fullName,

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { Sparkles, Camera, Megaphone, Shirt } from 'lucide-react'
 import SEO from '../components/SEO'
 import ScrollReveal, { StaggerGroup, StaggerItem } from '../components/ScrollReveal'
+import AnimatedHeading from '../components/AnimatedHeading'
 import CTA from '../components/CTA'
 
 const categories = [
@@ -95,13 +96,14 @@ export default function Modeling() {
         <div className="absolute inset-0 bg-black/55" />
 
         <div className="site-container relative z-10 flex min-h-[52svh] flex-col justify-end pb-10 pt-20 sm:pb-12 sm:pt-24 md:min-h-[58svh] md:pb-14 md:pt-28">
-          <ScrollReveal className="max-w-3xl">
+          <div className="max-w-3xl">
             <p className="mb-3 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold sm:mb-4">
               Fashion & Presence
             </p>
-            <h1 className="font-sans text-[2rem] font-bold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-[3.4rem]">
-              Modeling with identity
-            </h1>
+            <AnimatedHeading
+              text="Modeling with identity"
+              className="font-sans text-[2rem] font-bold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-[3.4rem]"
+            />
             <p className="mt-4 max-w-xl text-sm font-light leading-relaxed text-white/80 sm:mt-5 sm:text-base md:text-lg">
               Runway, editorial, and brand presence — the same excellence PM brings to radio and the
               stage, translated into image.
@@ -114,7 +116,7 @@ export default function Modeling() {
                 View Portfolio
               </a>
             </div>
-          </ScrollReveal>
+          </div>
         </div>
       </section>
 
@@ -150,11 +152,11 @@ export default function Modeling() {
             <StaggerItem>
               <p className="eyebrow mb-3">Overview</p>
             </StaggerItem>
-            <StaggerItem>
-              <h2 className="font-sans text-3xl font-bold leading-tight tracking-tight text-ink md:text-4xl">
-                Presence as craft
-              </h2>
-            </StaggerItem>
+            <AnimatedHeading
+              as="h2"
+              text="Presence as craft"
+              className="font-sans text-3xl font-bold leading-tight tracking-tight text-ink md:text-4xl"
+            />
             <StaggerItem>
               <div className="my-5 gold-divider" />
             </StaggerItem>
@@ -199,9 +201,11 @@ export default function Modeling() {
             <p className="mb-3 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold">
               Focus
             </p>
-            <h2 className="font-sans text-3xl font-bold tracking-tight text-ink md:text-4xl">
-              Work categories
-            </h2>
+            <AnimatedHeading
+              as="h2"
+              text="Work categories"
+              className="font-sans text-3xl font-bold tracking-tight text-ink md:text-4xl"
+            />
             <p className="mt-3 text-base font-light text-muted">
               Three lanes where image, voice, and culture meet.
             </p>
@@ -241,9 +245,11 @@ export default function Modeling() {
               <p className="mb-3 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold">
                 Portfolio
               </p>
-              <h2 className="font-sans text-3xl font-bold leading-tight tracking-tight text-ink md:text-4xl">
-                Selected imagery
-              </h2>
+              <AnimatedHeading
+                as="h2"
+                text="Selected imagery"
+                className="font-sans text-3xl font-bold leading-tight tracking-tight text-ink md:text-4xl"
+              />
             </ScrollReveal>
             <ScrollReveal delay={0.08} className="lg:col-span-5">
               <p className="text-base font-light text-muted">
@@ -299,11 +305,11 @@ export default function Modeling() {
                 Style House
               </p>
             </StaggerItem>
-            <StaggerItem>
-              <h2 className="font-sans text-3xl font-bold tracking-tight text-white md:text-4xl">
-                Made-in-Ghana energy, camera-ready craft
-              </h2>
-            </StaggerItem>
+            <AnimatedHeading
+              as="h2"
+              text="Made-in-Ghana energy, camera-ready craft"
+              className="font-sans text-3xl font-bold tracking-tight text-white md:text-4xl"
+            />
             <StaggerItem>
               <p className="mt-4 max-w-xl text-base font-light leading-relaxed text-white/70">
                 Modeling for PM is never just a look — it connects to Nantegh fashion, Blaklaaa

@@ -3,15 +3,56 @@ import { Link } from 'react-router-dom'
 import { Mail, Phone, MapPin } from 'lucide-react'
 import SEO from '../components/SEO'
 import ScrollReveal, { StaggerGroup, StaggerItem } from '../components/ScrollReveal'
-import { contactInfo, socialLinks, ventures } from '../data/ventures'
+import AnimatedHeading from '../components/AnimatedHeading'
+import { bookMcHref, contactInfo, socialLinks, ventures, whatsappHref } from '../data/ventures'
 import SocialIconLinks from '../components/SocialIcons'
+
+const inquiryOptions = [
+  'Book MC / Hypeman',
+  'Book an event (concert, wedding, corporate)',
+  'Modeling booking',
+  'PM Foundation — donate or partner',
+  'Afrin Party — January',
+  'A Pint 4 A Life — March',
+  'Blak Trip — May / November',
+  'The Finest Experience — September',
+  'A Walk With PM — October',
+  'Dine With The Street — December',
+  'Blaklaaa Movement',
+  'Entertainment consulting',
+  'Nantegh — fashion & shoes',
+  'Cyto GH — talent grooming',
+  'Other',
+]
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    const form = e.currentTarget
+    const data = new FormData(form)
+    const name = String(data.get('name') ?? '').trim()
+    const email = String(data.get('email') ?? '').trim()
+    const company = String(data.get('company') ?? '').trim()
+    const inquiry = String(data.get('inquiry') ?? '').trim()
+    const message = String(data.get('message') ?? '').trim()
+
+    const lines = [
+      'Hello PM,',
+      '',
+      'I am contacting you from the PM Holdings website.',
+      `Name: ${name}`,
+      email && `Email: ${email}`,
+      company && `Company: ${company}`,
+      `Category: ${inquiry}`,
+      '',
+      message,
+    ].filter(Boolean)
+
+    window.location.href = whatsappHref(lines.join('\n'))
     setSubmitted(true)
+    form.reset()
   }
 
   return (
@@ -25,18 +66,19 @@ export default function Contact() {
       <section className="bg-off pb-12 pt-24 sm:pb-16 sm:pt-28 md:pb-24 md:pt-32">
         <div className="site-container">
           {/* Page intro — Moneta-style centered header */}
-          <ScrollReveal className="mx-auto mb-8 max-w-2xl text-center sm:mb-10 md:mb-14">
+          <div className="mx-auto mb-8 max-w-2xl text-center sm:mb-10 md:mb-14">
             <p className="mb-3 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold">
               Connect
             </p>
-            <h1 className="font-sans text-[2rem] font-bold tracking-tight text-ink sm:text-4xl md:text-5xl">
-              Contact Us
-            </h1>
+            <AnimatedHeading
+              text="Contact Us"
+              className="font-sans text-[2rem] font-bold tracking-tight text-ink sm:text-4xl md:text-5xl"
+            />
             <p className="mt-3 text-sm font-light leading-relaxed text-muted sm:mt-4 sm:text-base">
               Business inquiries, bookings, foundation partnerships, and collaborations — start
               here.
             </p>
-          </ScrollReveal>
+          </div>
 
           {/* Main card: Get in touch + form */}
           <ScrollReveal>
@@ -52,9 +94,11 @@ export default function Contact() {
                 >
                   <StaggerGroup stagger={0.08}>
                     <StaggerItem>
-                      <h2 className="font-sans text-2xl font-bold tracking-tight text-ink md:text-3xl">
-                        Get in touch
-                      </h2>
+                      <AnimatedHeading
+                        as="h2"
+                        text="Get in touch"
+                        className="font-sans text-2xl font-bold tracking-tight text-ink md:text-3xl"
+                      />
                       <p className="mt-3 text-sm font-light leading-relaxed text-muted">
                         Reach PM’s team for bookings, consulting, foundation work, and brand
                         collaborations.
@@ -77,12 +121,14 @@ export default function Contact() {
                             >
                               {contactInfo.email}
                             </a>
-                            <a
-                              href={`mailto:${contactInfo.booking}`}
-                              className="mt-0.5 block text-sm font-light text-muted transition-colors hover:text-gold"
-                            >
-                              {contactInfo.booking}
-                            </a>
+                            {contactInfo.booking !== contactInfo.email && (
+                              <a
+                                href={`mailto:${contactInfo.booking}`}
+                                className="mt-0.5 block text-sm font-light text-muted transition-colors hover:text-gold"
+                              >
+                                {contactInfo.booking}
+                              </a>
+                            )}
                           </div>
                         </li>
                         <li className="flex gap-3">
@@ -205,14 +251,11 @@ export default function Contact() {
                           <option value="" disabled>
                             Select a category
                           </option>
-                          <option value="business">Business / Consulting</option>
-                          <option value="booking">Booking / Modeling</option>
-                          <option value="foundation">PM Foundation</option>
-                          <option value="entertainment">PM Entertainment</option>
-                          <option value="nantegh">Nantegh</option>
-                          <option value="cyto">CYTO</option>
-                          <option value="blacklaa">Blacklaa Movement</option>
-                          <option value="other">Other</option>
+                          {inquiryOptions.map((option) => (
+                            <option key={option} value={option}>
+                              {option}
+                            </option>
+                          ))}
                         </select>
                       </div>
                       <div>
@@ -250,19 +293,23 @@ export default function Contact() {
       <section className="bg-ink py-14 md:py-16">
         <div className="site-container flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <div className="max-w-xl">
-            <h2 className="font-sans text-2xl font-bold tracking-tight text-white md:text-3xl">
-              Ready to book The Finest MC?
-            </h2>
+            <AnimatedHeading
+              as="h2"
+              text="Ready to book The Finest MC?"
+              className="font-sans text-2xl font-bold tracking-tight text-white md:text-3xl"
+            />
             <p className="mt-2 text-sm font-light text-white/60">
               Concerts, corporate events, weddings, festivals, consulting, or foundation
               partnerships.
             </p>
           </div>
           <a
-            href={`mailto:${contactInfo.booking}`}
+            href={bookMcHref}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-primary w-full gap-2 sm:w-auto"
           >
-            Email Booking
+            Book MC on WhatsApp
           </a>
         </div>
       </section>

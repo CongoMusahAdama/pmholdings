@@ -12,6 +12,7 @@ import Hero from '../components/Hero'
 import SEO from '../components/SEO'
 import ScrollReveal, { StaggerGroup, StaggerItem } from '../components/ScrollReveal'
 import SectionHeading from '../components/SectionHeading'
+import AnimatedHeading from '../components/AnimatedHeading'
 import MediaImage from '../components/MediaImage'
 import CTA from '../components/CTA'
 import FeatureCard from '../components/FeatureCard'
@@ -19,11 +20,12 @@ import VentureCard from '../components/VentureCard'
 import BrandLogo from '../components/BrandLogo'
 import StagesCarousel from '../components/StagesCarousel'
 import { brand, ventures } from '../data/ventures'
+import { upcomingEvents } from '../data/upcoming'
 
 const featureCards = [
   {
-    title: 'PM Entertainment',
-    body: 'Elite MC & hypeman bookings, consulting, and The Finest MasterClass for aspiring communicators.',
+    title: 'PM Entertainment Consult',
+    body: 'Events, PR, advertising and product activations, talent management, voice-overs, videography, photography and branding — based in Takoradi.',
     to: '/pm-entertainment',
     icon: Mic2,
     variant: 'white' as const,
@@ -122,7 +124,7 @@ export default function Home() {
       <SEO
         title="Home"
         path="/"
-        description="PM Holdings — Nana Quasi-Wusu (PM), The Finest MC. Award-winning Ghanaian broadcaster, professional MC/hypeman, humanitarian and fashion model. Home of PM Foundation, PM Entertainment, Cyto Records, Blaklaaa, Nantegh and Modeling in Takoradi, Ghana."
+        description="PM Holdings — Nana Quasi-Wusu (PM), The Finest MC. Award-winning Ghanaian broadcaster, professional MC/hypeman, humanitarian and fashion model. Home of PM Foundation, PM Entertainment, Cyto GH, Blaklaaa, Nantegh and Modeling in Takoradi, Ghana."
       />
 
       <Hero />
@@ -148,6 +150,60 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Upcoming */}
+      <section id="upcoming" className="scroll-mt-28 bg-off py-16 md:py-24">
+        <div className="site-container">
+          <ScrollReveal className="mb-10 max-w-2xl md:mb-12">
+            <p className="mb-3 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold">
+              Upcoming
+            </p>
+            <AnimatedHeading
+              as="h2"
+              text="The lineup"
+              className="font-sans text-3xl font-bold tracking-tight text-ink md:text-4xl"
+            />
+            <p className="mt-3 text-base font-light text-muted">
+              Every year, on the calendar — from Afrin Party to Dine With The Street.
+            </p>
+          </ScrollReveal>
+
+          <ol className="overflow-hidden rounded-[1.75rem] bg-ink">
+            {upcomingEvents.map((event, i) => (
+              <li
+                key={event.id}
+                className={i < upcomingEvents.length - 1 ? 'border-b border-white/10' : ''}
+              >
+                <Link
+                  to={event.to}
+                  className="group flex items-center gap-4 px-5 py-4 transition-colors hover:bg-white/[0.04] sm:gap-5 sm:px-7 sm:py-5"
+                >
+                  <img
+                    src={event.image}
+                    alt=""
+                    className="h-14 w-14 shrink-0 rounded-xl object-cover sm:h-[4.25rem] sm:w-[4.25rem]"
+                    style={{ objectPosition: 'center 30%' }}
+                  />
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-gold">
+                      {event.month}
+                    </p>
+                    <h3 className="mt-1 font-sans text-base font-bold tracking-tight text-white sm:text-lg">
+                      {event.title}
+                    </h3>
+                    <p className="mt-0.5 hidden text-sm font-light text-white/50 sm:block">
+                      {event.body}
+                    </p>
+                  </div>
+                  <span className="hidden shrink-0 text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-white/35 md:inline">
+                    {event.org}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
       {/* About PM */}
       <section id="about-teaser" className="bg-white py-20 md:py-28">
         <div className="site-container grid items-stretch gap-10 lg:grid-cols-2 lg:gap-14">
@@ -155,11 +211,11 @@ export default function Home() {
             <StaggerItem>
               <p className="eyebrow mb-3">About PM</p>
             </StaggerItem>
-            <StaggerItem>
-              <h2 className="font-sans text-3xl font-bold leading-tight text-ink md:text-4xl lg:text-[2.45rem]">
-                Welcome to the World of The Finest MC
-              </h2>
-            </StaggerItem>
+            <AnimatedHeading
+              as="h2"
+              text="Welcome to the World of The Finest MC"
+              className="font-sans text-3xl font-bold leading-tight text-ink md:text-4xl lg:text-[2.45rem]"
+            />
             <StaggerItem>
               <div className="my-5 gold-divider" />
             </StaggerItem>
@@ -172,8 +228,8 @@ export default function Home() {
                 </p>
                 <p>
                   He hosts The DrYve on Y97.9FM, has hosted 1,000+ events nationwide, founded PM
-                  Foundation and PM Entertainment Consult, and champions Blaklaaa — Proud to be
-                  Black — alongside fashion work through Nantegh.
+                  Foundation and PM Entertainment Consult, grooms talent through Cyto GH, and
+                  champions Blaklaaa — Proud to be Black — alongside fashion work through Nantegh.
                 </p>
               </div>
             </StaggerItem>
@@ -230,11 +286,11 @@ export default function Home() {
               <StaggerItem>
                 <p className="eyebrow mb-2">On Air</p>
               </StaggerItem>
-              <StaggerItem>
-                <h2 className="font-sans text-2xl font-bold leading-tight text-ink md:text-[1.85rem] lg:text-[2.05rem]">
-                  The DrYve of Your Lyfe
-                </h2>
-              </StaggerItem>
+              <AnimatedHeading
+                as="h2"
+                text="The DrYve of Your Lyfe"
+                className="font-sans text-2xl font-bold leading-tight text-ink md:text-[1.85rem] lg:text-[2.05rem]"
+              />
               <StaggerItem>
                 <p className="mt-3 max-w-lg text-sm font-light leading-relaxed text-muted">
                   Drive-time energy, culture, and conversation — weekdays on Y97.9FM Takoradi with
@@ -326,11 +382,11 @@ export default function Home() {
                 Who We Are?
               </p>
             </StaggerItem>
-            <StaggerItem>
-              <h2 className="font-sans text-3xl font-bold leading-tight text-ink md:text-4xl lg:text-[2.65rem]">
-                Excellence with purpose across entertainment & impact
-              </h2>
-            </StaggerItem>
+            <AnimatedHeading
+              as="h2"
+              text="Excellence with purpose across entertainment & impact"
+              className="font-sans text-3xl font-bold leading-tight text-ink md:text-4xl lg:text-[2.65rem]"
+            />
             <StaggerItem>
               <p className="mt-5 text-base font-light leading-[1.85] text-muted">
                 Nana Quasi-Wusu (PM), The Finest MC, is an award-winning broadcaster, professional
@@ -366,7 +422,7 @@ export default function Home() {
                       <Star key={i} className="h-4 w-4 fill-gold" />
                     ))}
                   </div>
-                  <p className="font-sans text-3xl font-bold text-ink">8+ / 56+</p>
+                  <p className="font-sans text-3xl font-bold text-ink">8 / 15+</p>
                   <p className="mt-1 text-sm text-muted">Awards & industry nominations</p>
                 </div>
                 <div className="rounded-3xl border border-line bg-white p-6 shadow-[var(--shadow-soft)]">
@@ -411,71 +467,6 @@ export default function Home() {
               </Link>
             </div>
           </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Upcoming — Western Content Creators */}
-      <section id="upcoming" className="bg-[#f6f4ef] py-20 md:py-28">
-        <div className="site-container grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
-          <ScrollReveal className="lg:col-span-5" breathe>
-            <div className="overflow-hidden border border-line bg-white shadow-[var(--shadow-soft)]">
-              <img
-                src="/images/events/western-content-creators.jpg"
-                alt="Western Content Creators Seminar 2026 — PM Entertainment Consult"
-                className="w-full object-cover"
-                loading="lazy"
-              />
-            </div>
-          </ScrollReveal>
-
-          <StaggerGroup className="lg:col-span-7" delay={0.08} stagger={0.1}>
-            <StaggerItem>
-              <p className="eyebrow mb-3">Upcoming</p>
-            </StaggerItem>
-            <StaggerItem>
-              <h2 className="font-sans text-3xl font-bold leading-tight text-ink md:text-4xl">
-                Western Content Creators Seminar
-              </h2>
-            </StaggerItem>
-            <StaggerItem>
-              <div className="my-5 gold-divider" />
-            </StaggerItem>
-            <StaggerItem>
-              <p className="max-w-xl text-base font-light leading-relaxed text-muted">
-                PM Entertainment Consult presents #WCCS2026 — a Western Region seminar for content
-                creators. Building craft, community, and opportunity across media and digital
-                storytelling.
-              </p>
-            </StaggerItem>
-            <StaggerItem>
-              <div className="mt-6 flex flex-wrap items-center gap-4">
-                <img
-                  src="/logos/pm-entertainment.jpg"
-                  alt="PM Entertainment Consult"
-                  className="h-14 w-auto object-contain"
-                />
-                <div>
-                  <p className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-gold">
-                    Organised by
-                  </p>
-                  <p className="font-sans text-sm font-bold text-ink">PM Entertainment Consult</p>
-                </div>
-              </div>
-            </StaggerItem>
-            <StaggerItem>
-              <div className="action-row mt-8">
-                <a href="tel:0549179923" className="btn-primary">
-                  Enquire / Sponsor
-                </a>
-                <Link to="/pm-entertainment" className="btn-ghost">
-                  About PEC
-                </Link>
-              </div>
-              <p className="mt-4 text-sm text-muted">
-                Sponsorship &amp; enquiries: 0549179923 / 0242903049
-              </p>
-            </StaggerItem>
-          </StaggerGroup>
         </div>
       </section>
 
@@ -568,9 +559,11 @@ export default function Home() {
               <p className="mb-3 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold">
                 Ventures
               </p>
-              <h2 className="font-sans text-3xl font-bold leading-tight text-ink md:text-4xl lg:text-5xl">
-                Everything He Builds
-              </h2>
+              <AnimatedHeading
+                as="h2"
+                text="Everything He Builds"
+                className="font-sans text-3xl font-bold leading-tight text-ink md:text-4xl lg:text-5xl"
+              />
               <div className="my-5 gold-divider" />
               <p className="max-w-xl text-base font-light leading-relaxed text-muted">
                 Entertainment excellence, community impact, Made-in-Ghana fashion, talent
@@ -659,11 +652,11 @@ export default function Home() {
             <StaggerItem>
               <p className="eyebrow mb-3">Fashion & Style</p>
             </StaggerItem>
-            <StaggerItem>
-              <h2 className="font-sans text-3xl font-bold text-ink md:text-4xl">
-                Nantegh & Modeling
-              </h2>
-            </StaggerItem>
+            <AnimatedHeading
+              as="h2"
+              text="Nantegh & Modeling"
+              className="font-sans text-3xl font-bold text-ink md:text-4xl"
+            />
             <StaggerItem>
               <div className="my-5 gold-divider" />
             </StaggerItem>

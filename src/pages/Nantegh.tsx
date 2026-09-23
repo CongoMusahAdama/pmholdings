@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react'
 import { ArrowLeft, ArrowRight, ShoppingBag } from 'lucide-react'
 import SEO from '../components/SEO'
 import ScrollReveal from '../components/ScrollReveal'
+import AnimatedHeading from '../components/AnimatedHeading'
 import CTA from '../components/CTA'
 import { contactInfo } from '../data/ventures'
 
@@ -190,16 +191,17 @@ export default function Nantegh() {
         <div className="absolute inset-0 bg-black/40" />
 
         <div className="site-container relative z-10 flex min-h-[78svh] flex-col items-center justify-center pb-16 pt-24 text-center md:min-h-[88svh]">
-          <ScrollReveal>
+          <div>
             <p className="mb-2 text-[0.72rem] font-semibold uppercase tracking-[0.4em] text-white">
               Nantegh
             </p>
             <p className="mb-8 text-[0.62rem] font-medium uppercase tracking-[0.3em] text-white/70">
               Men essentials · Handmade in Ghana
             </p>
-            <h1 className="font-sans text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-              Look Smart Collection
-            </h1>
+            <AnimatedHeading
+              text="Look Smart Collection"
+              className="font-sans text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
+            />
             <p className="mx-auto mt-5 max-w-md text-sm font-light leading-relaxed text-white/85 md:text-base">
               Originally handmade footwear and fashion presence — crafted to look smart and walk
               in comfort.
@@ -210,16 +212,18 @@ export default function Nantegh() {
             >
               Shop all
             </a>
-          </ScrollReveal>
+          </div>
         </div>
       </section>
 
       {/* Trending */}
       <section id="trending" className="bg-white py-14 md:py-20">
         <div className="site-container">
-          <h2 className="mb-10 font-sans text-2xl font-semibold tracking-tight text-ink md:text-[1.75rem]">
-            Trending now
-          </h2>
+          <AnimatedHeading
+            as="h2"
+            text="Trending now"
+            className="mb-10 font-sans text-2xl font-semibold tracking-tight text-ink md:text-[1.75rem]"
+          />
           <ShopCarousel items={trending} />
         </div>
       </section>
@@ -227,9 +231,11 @@ export default function Nantegh() {
       {/* Shop the look */}
       <section id="shop" className="bg-white pb-16 pt-4 md:pb-24 md:pt-6">
         <div className="site-container">
-          <h2 className="mb-8 font-sans text-3xl font-bold tracking-tight text-ink md:mb-10 md:text-4xl">
-            Shop the look
-          </h2>
+          <AnimatedHeading
+            as="h2"
+            text="Shop the look"
+            className="mb-8 font-sans text-3xl font-bold tracking-tight text-ink md:mb-10 md:text-4xl"
+          />
           <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
             <ScrollReveal className="lg:col-span-5">
               <div className="overflow-hidden rounded-2xl bg-[#eceae6]">
@@ -310,9 +316,11 @@ export default function Nantegh() {
             </div>
           </ScrollReveal>
           <ScrollReveal delay={0.08}>
-            <h2 className="font-sans text-3xl font-bold tracking-tight text-white md:text-4xl">
-              Our Mission
-            </h2>
+            <AnimatedHeading
+              as="h2"
+              text="Our Mission"
+              className="font-sans text-3xl font-bold tracking-tight text-white md:text-4xl"
+            />
             <div className="mt-5 space-y-4 text-base font-light leading-relaxed text-white/70">
               <p>
                 Nantegh is Nana Quasi-Wusu’s fashion house — Made-in-Ghana craft with international

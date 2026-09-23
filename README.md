@@ -35,7 +35,7 @@ npm run preview
 | `/pm-entertainment` | PM Entertainment |
 | `/nantegh` | Nantegh Fashion |
 | `/cyto` | CYTO Talent Incubation |
-| `/blacklaa` | Blacklaa Movement |
+| `/blacklaa` | Blaklaaa Movement |
 | `/modeling` | Modeling |
 | `/contact` | Contact |
 

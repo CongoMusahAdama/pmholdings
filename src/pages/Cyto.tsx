@@ -2,73 +2,96 @@ import { Link } from 'react-router-dom'
 import {
   Mic2,
   Music2,
-  MapPin,
   Sparkles,
   Users,
   GraduationCap,
   CheckCircle2,
-  Disc3,
+  Camera,
+  Crown,
 } from 'lucide-react'
 import SEO from '../components/SEO'
 import ScrollReveal, { StaggerGroup, StaggerItem } from '../components/ScrollReveal'
+import AnimatedHeading from '../components/AnimatedHeading'
+import AnimatedStats from '../components/AnimatedStats'
 import CytoRoadmap from '../components/CytoRoadmap'
 import CTA from '../components/CTA'
 
 const pillars = [
   {
-    title: 'Groom',
-    body: 'Shape voice, image, and discipline — so raw musical gift shows up like a real artiste.',
+    title: 'Nurture',
+    body: 'Protect the gift, then give it room to grow — with care, structure, and real attention.',
     icon: Sparkles,
     tone: 'gold' as const,
   },
   {
-    title: 'Mentor',
-    body: 'One-on-one guidance from PM — song craft, brand, ethics, and the decisions that build music careers.',
+    title: 'Groom',
+    body: 'Shape craft, image, and discipline so talent shows up like a professional, not a hobby.',
     icon: Users,
     tone: 'ink' as const,
   },
   {
-    title: 'Train',
-    body: 'Structured practice for singers and music artistes — vocal readiness, performance, and industry polish.',
+    title: 'Polish',
+    body: 'Refine presence, delivery, and standards until every gift is the best version of itself.',
     icon: GraduationCap,
     tone: 'white' as const,
   },
 ]
 
+const talentTypes = [
+  'Presenters',
+  'MCs',
+  'Hypemen',
+  'Dancers',
+  'Bloggers',
+  'Artistes',
+  'Musicians',
+  'Models',
+  'Beauty pageant',
+  'Public speakers',
+  'Content creators',
+]
+
 const focus = [
   {
-    title: 'Singers & Vocalists',
-    body: 'Purposeful development for singing and recorded music — not MC work.',
+    title: 'Stage & Voice',
+    body: 'Presenters, MCs, hypemen, and public speakers — presence, delivery, and command.',
     icon: Mic2,
     image: '/images/talent4.jpg',
   },
   {
-    title: 'Music Artistes',
-    body: 'Songwriting, performance, and artiste branding built for a real catalogue.',
+    title: 'Music & Movement',
+    body: 'Artistes, musicians, and dancers — performance, catalogue, and stage craft.',
     icon: Music2,
     image: '/images/talent3.jpg',
   },
   {
-    title: 'Recording Path',
-    body: 'From incubation to signed deals — releases, videos, and career management.',
-    icon: Disc3,
+    title: 'Digital Storytellers',
+    body: 'Bloggers and content creators — voice, visibility, and a brand that lasts.',
+    icon: Camera,
     image: '/images/talent23.jpg',
   },
   {
-    title: 'Western Region Focus',
-    body: 'Growing Ghana’s music scene where PM is rooted — starting at home.',
-    icon: MapPin,
+    title: 'Fashion & Pageant',
+    body: 'Models and beauty pageant talent — poise, image, and professional presence.',
+    icon: Crown,
     image: '/images/talent67.jpg',
   },
 ]
 
 const checklist = [
-  'Vocal & performance polish',
-  'Song craft & music identity',
-  'Artiste brand & visibility',
-  'Ethics of the music business',
-  'Release & monetisation pathways',
-  'Industry introductions & debuts',
+  'Craft, presence & delivery',
+  'Personal brand & image',
+  'Discipline & professional ethics',
+  'Stage and camera readiness',
+  'Mentorship from PM',
+  'Industry introductions & exposure',
+]
+
+const stats = [
+  { value: 35, suffix: '+', label: 'Talents nurtured' },
+  { value: 'Bluk', label: 'Current beneficiary' },
+  { value: 11, suffix: '+', label: 'Talent lanes' },
+  { value: 'PM', label: 'Hands-on mentorship' },
 ]
 
 const talentGallery = [
@@ -87,46 +110,45 @@ export default function Cyto() {
   return (
     <>
       <SEO
-        title="Cyto Records"
+        title="Cyto GH"
         path="/cyto"
-        description="Cyto Records under PM Holdings — music-first talent house by Nana Quasi-Wusu (PM). We develop singers and music artistes purposefully for music — not MC work. Talent rules. Passion conquers."
+        description="Cyto GH under PM Holdings — nurture, groom, and polish talents to become the best version of every gift they carry. 35+ presenters, MCs, hypemen, dancers, bloggers, artistes, musicians, models, beauty pageant, public speakers, and content creators. Current beneficiary: Bluk."
       />
 
-      {/* Hero */}
       <section className="relative min-h-[48svh] overflow-hidden bg-ink md:min-h-[52svh]">
         <img
           src="/images/talent7.jpg"
-          alt="Cyto Records — music talent incubation with Nana Quasi-Wusu (PM)"
+          alt="Cyto — nurturing, grooming, and polishing talent with Nana Quasi-Wusu (PM)"
           className="absolute inset-0 h-full w-full object-cover"
           style={{ objectPosition: 'center 22%' }}
         />
         <div className="absolute inset-0 bg-black/58" />
 
         <div className="site-container relative z-10 flex min-h-[48svh] flex-col justify-end pb-10 pt-20 sm:pb-12 sm:pt-24 md:min-h-[52svh] md:pb-14 md:pt-28">
-          <ScrollReveal className="max-w-3xl">
+          <div className="max-w-3xl">
             <p className="mb-3 text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-gold">
-              Cyto Records · Music First
+              Cyto GH · Talent House
             </p>
-            <h1 className="font-sans text-[1.85rem] font-bold leading-[1.12] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-[3.5rem]">
-              We develop singers and music artistes.
-            </h1>
+            <AnimatedHeading
+              text="Nurture, groom, and polish every gift."
+              className="font-sans text-[1.85rem] font-bold leading-[1.12] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-[3.5rem]"
+            />
             <p className="mt-4 max-w-xl text-sm font-light leading-relaxed text-white/80 sm:mt-5 sm:text-base md:text-lg">
-              Talent rules. Passion conquers. Cyto is purposeful music development — singing,
-              song craft, and artiste careers — not MC training.
+              Talent rules. Passion conquers. Cyto helps talents become the best version of every
+              gift they carry — 35+ already through this initiative.
             </p>
             <div className="action-row mt-8">
               <Link to="/contact" className="btn-primary">
                 Apply to Join
               </Link>
               <a href="#artiste" className="btn-ghost-light">
-                Meet Tinuabrus
+                Meet Bluk
               </a>
             </div>
-          </ScrollReveal>
+          </div>
         </div>
       </section>
 
-      {/* Groom / Mentor / Train strips */}
       <section id="pillars">
         <StaggerGroup className="grid md:grid-cols-3" alternate stagger={0.06}>
           {pillars.map((pillar) => {
@@ -168,7 +190,12 @@ export default function Cyto() {
         </StaggerGroup>
       </section>
 
-      {/* Mission */}
+      <section className="bg-white">
+        <div className="site-container">
+          <AnimatedStats stats={stats} />
+        </div>
+      </section>
+
       <section id="mission" className="bg-white py-16 md:py-24">
         <div className="site-container grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
           <ScrollReveal className="lg:col-span-6">
@@ -186,27 +213,38 @@ export default function Cyto() {
             <StaggerItem>
               <p className="eyebrow mb-3">What Cyto Does</p>
             </StaggerItem>
-            <StaggerItem>
-              <h2 className="font-sans text-3xl font-bold leading-tight tracking-tight text-ink md:text-4xl">
-                Building career-ready music artistes
-              </h2>
-            </StaggerItem>
+            <AnimatedHeading
+              as="h2"
+              text="The best version of every gift they carry"
+              className="font-sans text-3xl font-bold leading-tight tracking-tight text-ink md:text-4xl"
+            />
             <StaggerItem>
               <div className="my-5 gold-divider" />
             </StaggerItem>
             <StaggerItem>
               <div className="space-y-4 text-base font-light leading-relaxed text-muted">
                 <p>
-                  Cyto Records is Nana Quasi-Wusu’s music incubation house — where singers and
-                  music artistes are groomed, mentored, and trained for real industry work. Not
-                  hobby energy. Professional standards.
+                  Cyto exists to nurture, groom, and polish talents — so each person becomes the
+                  best version of the gift they carry. Not hobby energy. Professional standards.
                 </p>
                 <p>
-                  This lane is purposefully for music — singing, songs, and artiste careers. MC
-                  and hypeman development lives under PM Entertainment and The Finest MasterClass,
-                  not Cyto.
+                  About 35+ talents have already benefited from this initiative — presenters, MCs,
+                  hypemen, dancers, bloggers, artistes, musicians, models, beauty pageant talent,
+                  public speakers, content creators, and more.
                 </p>
               </div>
+            </StaggerItem>
+            <StaggerItem>
+              <ul className="mt-6 flex flex-wrap gap-2">
+                {talentTypes.map((type) => (
+                  <li
+                    key={type}
+                    className="rounded-full border border-line bg-off px-3 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-ink"
+                  >
+                    {type}
+                  </li>
+                ))}
+              </ul>
             </StaggerItem>
             <StaggerItem>
               <ul className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -222,18 +260,19 @@ export default function Cyto() {
         </div>
       </section>
 
-      {/* Horizontal S-curve roadmap card */}
       <section id="process" className="bg-off py-16 md:py-24">
         <div className="site-container">
           <ScrollReveal className="mb-10 max-w-2xl md:mb-12">
             <p className="mb-3 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold">
               Roadmap
             </p>
-            <h2 className="font-sans text-3xl font-bold tracking-tight text-ink md:text-4xl">
-              How incubation works
-            </h2>
+            <AnimatedHeading
+              as="h2"
+              text="How grooming works"
+              className="font-sans text-3xl font-bold tracking-tight text-ink md:text-4xl"
+            />
             <p className="mt-3 max-w-lg text-base font-light text-muted">
-              Identify. Train. Mentor. Incubate. Then sign a deal — and we manage you.
+              Identify. Train. Mentor. Incubate. Then walk with you as the gift becomes a career.
             </p>
           </ScrollReveal>
 
@@ -241,8 +280,8 @@ export default function Cyto() {
 
           <ScrollReveal delay={0.15} className="mt-10 text-center md:mt-12">
             <p className="mx-auto max-w-xl text-sm font-light text-muted">
-              Ready talent doesn’t walk alone — once signed, Cyto and PM Entertainment manage your
-              path: bookings, positioning, and career growth.
+              Ready talent doesn’t walk alone — Cyto and PM Entertainment stay with you on
+              bookings, positioning, and growth.
             </p>
             <Link
               to="/contact"
@@ -254,22 +293,23 @@ export default function Cyto() {
         </div>
       </section>
 
-      {/* Who we develop */}
       <section id="focus" className="bg-white py-16 md:py-24">
         <div className="site-container">
           <div className="mb-10 grid gap-6 md:mb-12 lg:grid-cols-12 lg:items-end">
             <ScrollReveal className="lg:col-span-7">
               <p className="mb-3 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold">
-                Focus
+                Who We Develop
               </p>
-              <h2 className="font-sans text-3xl font-bold leading-tight tracking-tight text-ink md:text-4xl">
-                Who we develop
-              </h2>
+              <AnimatedHeading
+                as="h2"
+                text="Every gift. One standard."
+                className="font-sans text-3xl font-bold leading-tight tracking-tight text-ink md:text-4xl"
+              />
             </ScrollReveal>
             <ScrollReveal delay={0.08} className="lg:col-span-5">
               <p className="text-base font-light text-muted">
-                Music lanes only — singers and artistes groomed for releases, stages, and lasting
-                careers.
+                From the mic to the lens, the dance floor to the pageant stage — Cyto grooms the
+                gift you already carry.
               </p>
             </ScrollReveal>
           </div>
@@ -300,14 +340,13 @@ export default function Cyto() {
         </div>
       </section>
 
-      {/* Tinuabrus — music artiste spotlight */}
       <section id="artiste" className="bg-off py-16 md:py-24">
         <div className="site-container grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
           <ScrollReveal className="lg:col-span-6">
             <div className="overflow-hidden rounded-[1.5rem]">
               <img
                 src="/images/talent1.jpg"
-                alt="Tinuabrus — Cyto Records music artiste developed for singing"
+                alt="Bluk — current Cyto beneficiary"
                 className="aspect-[4/5] w-full object-cover md:aspect-[5/6]"
                 style={{ objectPosition: 'center 25%' }}
               />
@@ -316,25 +355,25 @@ export default function Cyto() {
 
           <StaggerGroup className="lg:col-span-6" stagger={0.08}>
             <StaggerItem>
-              <p className="eyebrow mb-3">Artiste Spotlight</p>
+              <p className="eyebrow mb-3">Current Beneficiary</p>
             </StaggerItem>
-            <StaggerItem>
-              <h2 className="font-sans text-3xl font-bold leading-tight tracking-tight text-ink md:text-4xl">
-                Tinuabrus
-              </h2>
-            </StaggerItem>
+            <AnimatedHeading
+              as="h2"
+              text="Bluk"
+              className="font-sans text-3xl font-bold leading-tight tracking-tight text-ink md:text-4xl"
+            />
             <StaggerItem>
               <div className="my-5 gold-divider" />
             </StaggerItem>
             <StaggerItem>
               <div className="space-y-4 text-base font-light leading-relaxed text-muted">
                 <p>
-                  With Tinuabrus, the work is purposeful music development — singing, songs, and
-                  artiste identity. Not MC training.
+                  Bluk is the current talent under Cyto — being nurtured, groomed, and polished to
+                  become the best version of the gift they carry.
                 </p>
                 <p>
-                  Cyto invests in the music lane: voice, craft, brand, and the path from incubation
-                  to signed career management under Cyto and PM Entertainment.
+                  One of 35+ who have come through this house. The work is personal: craft,
+                  character, visibility, and a path that can last.
                 </p>
               </div>
             </StaggerItem>
@@ -342,15 +381,15 @@ export default function Cyto() {
               <ul className="mt-6 space-y-2.5 text-sm text-ink/85">
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-gold" strokeWidth={1.75} />
-                  Developed as a music artiste / singer
+                  Currently being nurtured under Cyto
                 </li>
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-gold" strokeWidth={1.75} />
-                  Mentored for songs, performance, and artiste brand
+                  Groomed and polished for professional work
                 </li>
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-gold" strokeWidth={1.75} />
-                  MC &amp; hypeman lanes stay with PM Entertainment
+                  Mentored by Nana Quasi-Wusu (PM)
                 </li>
               </ul>
             </StaggerItem>
@@ -363,18 +402,19 @@ export default function Cyto() {
         </div>
       </section>
 
-      {/* Talent gallery */}
       <section id="talent" className="bg-white py-16 md:py-24">
         <div className="site-container">
           <ScrollReveal className="mx-auto mb-10 max-w-2xl text-center md:mb-12">
             <p className="mb-3 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-gold">
               In the Room
             </p>
-            <h2 className="font-sans text-3xl font-bold tracking-tight text-ink md:text-4xl">
-              Moments from the music process
-            </h2>
+            <AnimatedHeading
+              as="h2"
+              text="Moments from the process"
+              className="font-sans text-3xl font-bold tracking-tight text-ink md:text-4xl"
+            />
             <p className="mt-3 text-base font-light text-muted">
-              Real sessions. Real music talent. Cyto grooming the next generation of artistes.
+              Real sessions. Real gifts. Cyto grooming the next generation of professionals.
             </p>
           </ScrollReveal>
 
@@ -400,14 +440,13 @@ export default function Cyto() {
         </div>
       </section>
 
-      {/* Mentorship bridge */}
       <section className="bg-ink py-16 md:py-20">
         <div className="site-container grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
           <ScrollReveal className="lg:col-span-5">
             <div className="overflow-hidden">
               <img
                 src="/images/talent.jpg"
-                alt="PM mentoring music talent under Cyto Records"
+                alt="PM mentoring talent under Cyto"
                 className="aspect-[4/3] w-full object-cover"
                 style={{ objectPosition: 'center 30%' }}
               />
@@ -419,16 +458,15 @@ export default function Cyto() {
                 Mentorship
               </p>
             </StaggerItem>
-            <StaggerItem>
-              <h2 className="font-sans text-3xl font-bold tracking-tight text-white md:text-4xl">
-                Guided for music careers
-              </h2>
-            </StaggerItem>
+            <AnimatedHeading
+              as="h2"
+              text="Guided until the gift is ready"
+              className="font-sans text-3xl font-bold tracking-tight text-white md:text-4xl"
+            />
             <StaggerItem>
               <p className="mt-4 max-w-xl text-base font-light leading-relaxed text-white/70">
-                Cyto’s lane is music — vocal craft, performance, brand visibility, releases, and
-                ethics of the business. Looking for MC or hypeman training? That’s The Finest
-                MasterClass under PM Entertainment.
+                Cyto walks with talent from raw gift to polished professional — voice, movement,
+                brand, camera, and character. The same standard, whatever the lane.
               </p>
             </StaggerItem>
             <StaggerItem>
@@ -436,8 +474,8 @@ export default function Cyto() {
                 <Link to="/contact" className="btn-primary">
                   Apply Now
                 </Link>
-                <Link to="/pm-entertainment#masterclass" className="btn-ghost-light">
-                  MC MasterClass
+                <Link to="/pm-entertainment" className="btn-ghost-light">
+                  PM Entertainment
                 </Link>
               </div>
             </StaggerItem>
@@ -446,8 +484,8 @@ export default function Cyto() {
       </section>
 
       <CTA
-        title="Ready for a music career?"
-        subtitle="Apply to Cyto Records — purposeful grooming and mentorship for singers and music artistes."
+        title="Ready to grow your gift?"
+        subtitle="Apply to Cyto — nurture, grooming, and polish for presenters, MCs, artistes, models, creators, and more."
         primaryLabel="Apply / Inquire"
         primaryTo="/contact"
         secondaryLabel="PM Entertainment"
