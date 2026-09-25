@@ -724,13 +724,6 @@ export const braoseiPm15Items: GalleryItem[] = [
     category: 'PM @15',
   },
   {
-    id: 'braosei-pm15-104',
-    src: '/images/braosei-pm15/pm15-104.jpg',
-    alt: 'PM the Finest MC at 15 — photo by Braosei Studios',
-    title: 'PM @15',
-    category: 'PM @15',
-  },
-  {
     id: 'braosei-pm15-105',
     src: '/images/braosei-pm15/pm15-105.jpg',
     alt: 'PM the Finest MC at 15 — photo by Braosei Studios',
@@ -782,13 +775,6 @@ export const braoseiPm15Items: GalleryItem[] = [
   {
     id: 'braosei-pm15-112',
     src: '/images/braosei-pm15/pm15-112.jpg',
-    alt: 'PM the Finest MC at 15 — photo by Braosei Studios',
-    title: 'PM @15',
-    category: 'PM @15',
-  },
-  {
-    id: 'braosei-pm15-113',
-    src: '/images/braosei-pm15/pm15-113.jpg',
     alt: 'PM the Finest MC at 15 — photo by Braosei Studios',
     title: 'PM @15',
     category: 'PM @15',
@@ -2154,13 +2140,6 @@ export const braoseiPm15Items: GalleryItem[] = [
   {
     id: 'braosei-pm15-308',
     src: '/images/braosei-pm15/pm15-308.jpg',
-    alt: 'PM the Finest MC at 15 — photo by Braosei Studios',
-    title: 'PM @15',
-    category: 'PM @15',
-  },
-  {
-    id: 'braosei-pm15-309',
-    src: '/images/braosei-pm15/pm15-309.jpg',
     alt: 'PM the Finest MC at 15 — photo by Braosei Studios',
     title: 'PM @15',
     category: 'PM @15',
