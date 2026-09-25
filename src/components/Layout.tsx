@@ -5,6 +5,7 @@ import Footer from './Footer'
 import PageTransition from './PageTransition'
 import PageLoader from './PageLoader'
 import ScrollToTop from './ScrollToTop'
+import AnniversaryToast from './AnniversaryToast'
 
 export default function Layout() {
   const location = useLocation()
@@ -22,6 +23,7 @@ export default function Layout() {
       </main>
       <Footer />
       <ScrollToTop />
+      <AnniversaryToast />
     </>
   )
 }

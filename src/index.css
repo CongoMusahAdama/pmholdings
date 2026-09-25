@@ -158,6 +158,27 @@
   }
 }
 
+@keyframes anniversary-photos {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.anniversary-photos {
+  transform-box: view-box;
+  transform-origin: center;
+  animation: anniversary-photos 16s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anniversary-photos {
+    animation: none;
+  }
+}
+
 .page-spinner {
   position: relative;
   width: 3.5rem;

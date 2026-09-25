@@ -1,5 +1,15 @@
+import { braoseiPm15Items } from './braoseiPm15'
+import { kkdItems } from './kkdPhotos'
+import { prolificItems } from './prolificPhotos'
+import { weddingGalleryItems } from './weddingAlbum'
+import { yfmStudioItems } from './yfmStudio'
+
 export type GalleryCategory =
   | 'All'
+  | 'PM @15'
+  | 'KKD'
+  | 'Prolific'
+  | 'Wedding'
   | 'Portrait'
   | 'Broadcasting'
   | 'Events'
@@ -19,6 +29,10 @@ export interface GalleryItem {
 
 export const galleryCategories: GalleryCategory[] = [
   'All',
+  'PM @15',
+  'KKD',
+  'Prolific',
+  'Wedding',
   'Portrait',
   'Broadcasting',
   'Events',
@@ -1034,4 +1048,9 @@ export const galleryItems: GalleryItem[] = [
     title: 'Western Gospel Awards Host',
     category: 'Events',
   },
+  ...braoseiPm15Items,
+  ...kkdItems,
+  ...prolificItems,
+  ...weddingGalleryItems,
+  ...yfmStudioItems,
 ]

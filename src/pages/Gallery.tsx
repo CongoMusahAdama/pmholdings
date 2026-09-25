@@ -152,12 +152,15 @@ export default function Gallery() {
               />
               <p className="mt-3 max-w-lg text-sm font-light leading-relaxed text-white/75 sm:mt-4 sm:text-base md:text-lg">
                 Stages, radio, foundation, fashion, and culture — {galleryItems.length} moments from
-                the story of Nana Quasi-Wusu (PM).
+                the story of Nana Quasi-Wusu (PM). PM @15 photos by Braosei Studios. KKD and Prolific GH photos by Kofi Annan.
               </p>
               <div className="action-row mt-6 sm:mt-7">
                 <a href="#collection" className="btn-primary">
                   Browse Moments
                 </a>
+                <Link to="/wedding" className="btn-ghost-light">
+                  Wedding Album
+                </Link>
               </div>
               <AnimatePresence mode="wait">
                 <motion.p

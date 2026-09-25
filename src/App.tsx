@@ -10,6 +10,7 @@ import Cyto from './pages/Cyto'
 import Blacklaa from './pages/Blacklaa'
 import Modeling from './pages/Modeling'
 import Gallery from './pages/Gallery'
+import Wedding from './pages/Wedding'
 import Contact from './pages/Contact'
 import Honour from './pages/Honour'
 
@@ -50,6 +51,7 @@ export default function App() {
           <Route path="blacklaa" element={<Blacklaa />} />
           <Route path="modeling" element={<Modeling />} />
           <Route path="gallery" element={<Gallery />} />
+          <Route path="wedding" element={<Wedding />} />
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>

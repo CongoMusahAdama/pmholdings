@@ -41,6 +41,11 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link to="/wedding" className="hover:text-gold">
+                    Wedding Album
+                  </Link>
+                </li>
+                <li>
                   <Link to="/contact" className="hover:text-gold">
                     Contact
                   </Link>
@@ -113,6 +118,11 @@ export default function Footer() {
                 <li>
                   <Link to="/gallery" className="hover:text-gold">
                     Gallery
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/wedding" className="hover:text-gold">
+                    Wedding Album
                   </Link>
                 </li>
                 <li>
