@@ -10,16 +10,10 @@ const slides = [
     position: '72% 14%',
   },
   {
-    src: '/images/hero/home-foundation.jpg',
+    src: '/images/foundation1.jpg',
     label: 'PM Foundation',
-    caption: 'Donation & Community Service',
-    position: 'center 42%',
-  },
-  {
-    src: '/images/hero/home-fashion.jpg',
-    label: 'Fashion & Modeling',
-    caption: 'Style, Culture, Presence',
-    position: '68% 18%',
+    caption: 'A Pint 4 A Life',
+    position: 'center 16%',
   },
   {
     src: '/images/hero/home-stage.jpg',

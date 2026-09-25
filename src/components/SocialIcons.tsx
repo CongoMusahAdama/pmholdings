@@ -126,7 +126,9 @@ function SocialAnchor({
       title={link.label ? `${link.name}, ${link.label}` : link.name}
       aria-label={link.name}
       className={`inline-flex shrink-0 items-center justify-center rounded-full transition-transform hover:scale-110 ${
-        onDark || link.name === 'X' || link.name === 'TikTok' ? 'bg-white p-1.5 shadow-sm' : 'p-0.5'
+        onDark || link.name === 'X' || link.name === 'TikTok'
+          ? 'social-chip bg-[#ffffff] p-1.5 shadow-sm'
+          : 'p-0.5'
       }`}
     >
       <SocialIcon name={link.name} size={size} />

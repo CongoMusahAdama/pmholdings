@@ -173,8 +173,34 @@
   animation: anniversary-photos 16s ease-in-out infinite alternate;
 }
 
+@keyframes anniversary-sheen {
+  0% {
+    background-position: 120% 0;
+  }
+  100% {
+    background-position: -120% 0;
+  }
+}
+
+.anniversary-sheen {
+  background-image: linear-gradient(
+    100deg,
+    #ffffff 0%,
+    #ffffff 42%,
+    #f6e7b0 50%,
+    #ffffff 58%,
+    #ffffff 100%
+  );
+  background-size: 220% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: anniversary-sheen 2.8s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .anniversary-photos {
+  .anniversary-photos,
+  .anniversary-sheen {
     animation: none;
   }
 }
@@ -240,6 +266,11 @@ html.dark h4 {
 html.dark .bg-white,
 html.dark .panel {
   background-color: #171717 !important;
+}
+
+/* Social chips stay white so black marks (X, TikTok) stay visible */
+html.dark .social-chip {
+  background-color: #ffffff !important;
 }
 
 html.dark .bg-off,

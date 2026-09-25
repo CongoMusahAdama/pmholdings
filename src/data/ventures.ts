@@ -110,8 +110,6 @@ export interface SocialLink {
 
 /** Default / personal PM socials */
 export const socialLinks: SocialLink[] = [
-  { name: 'Facebook', href: 'https://www.facebook.com/TheFinestMc', label: '@PMTheFinestMc' },
-  { name: 'X', href: 'https://x.com/pmthefinestmc', label: '@pmthefinestmc' },
   { name: 'Instagram', href: 'https://www.instagram.com/pmthefinestmc', label: '@pmthefinestmc' },
   { name: 'TikTok', href: 'https://www.tiktok.com/@pmthefinestmc', label: '@pmthefinestmc' },
   { name: 'YouTube', href: 'https://www.youtube.com/@pmthefinestmc', label: '@pmthefinestmc' },
@@ -120,33 +118,47 @@ export const socialLinks: SocialLink[] = [
     href: 'https://www.linkedin.com/in/nana-quasi-wusu-pm-%F0%9F%87%AC%F0%9F%87%AD-9529b2102',
     label: 'Nana Quasi-Wusu (PM)',
   },
+  { name: 'Facebook', href: 'https://www.facebook.com/TheFinestMc', label: '@PMTheFinestMc' },
+  { name: 'X', href: 'https://x.com/pmthefinestmc', label: '@pmthefinestmc' },
 ]
+
+const linkedInHref = socialLinks.find((link) => link.name === 'LinkedIn')!.href
+const tikTok = socialLinks.find((link) => link.name === 'TikTok')!
+const youTube = socialLinks.find((link) => link.name === 'YouTube')!
 
 /** Per-venture socials — navbar switches these by current page */
 export const ventureSocials: Record<string, SocialLink[]> = {
   '/pm-foundation': [
+    { name: 'Instagram', href: 'https://www.instagram.com/pm__foundation', label: '@pm__foundation' },
+    tikTok,
+    youTube,
+    { name: 'LinkedIn', href: linkedInHref, label: 'PM Foundation' },
     { name: 'Facebook', href: 'https://www.facebook.com/pmfoundation', label: '@pm__foundation' },
     { name: 'X', href: 'https://x.com/pm__foundation', label: '@pm__foundation' },
-    { name: 'Instagram', href: 'https://www.instagram.com/pm__foundation', label: '@pm__foundation' },
-    { name: 'LinkedIn', href: socialLinks[5].href, label: 'PM Foundation' },
   ],
   '/pm-entertainment': socialLinks,
   '/nantegh': [
-    { name: 'Facebook', href: 'https://www.facebook.com/NanteShoes', label: 'Nante Shoes' },
     { name: 'Instagram', href: 'https://www.instagram.com/nante_shoes', label: '@nante_shoes' },
-    { name: 'LinkedIn', href: socialLinks[5].href, label: 'Nantegh' },
+    tikTok,
+    youTube,
+    { name: 'LinkedIn', href: linkedInHref, label: 'Nantegh' },
+    { name: 'Facebook', href: 'https://www.facebook.com/NanteShoes', label: 'Nante Shoes' },
   ],
   '/cyto': [
+    { name: 'Instagram', href: 'https://www.instagram.com/cyto_talent', label: '@cyto_talent' },
+    tikTok,
+    youTube,
+    { name: 'LinkedIn', href: linkedInHref, label: 'Cyto GH' },
     { name: 'Facebook', href: 'https://www.facebook.com/TheFinestMc', label: '@PMTheFinestMc' },
     { name: 'X', href: 'https://x.com/pmthefinestmc', label: '@pmthefinestmc' },
-    { name: 'Instagram', href: 'https://www.instagram.com/cyto_talent', label: '@cyto_talent' },
-    { name: 'LinkedIn', href: socialLinks[5].href, label: 'Cyto GH' },
   ],
   '/blacklaa': [
+    { name: 'Instagram', href: 'https://www.instagram.com/blaklaaa', label: '@blaklaaa' },
+    tikTok,
+    youTube,
+    { name: 'LinkedIn', href: linkedInHref, label: 'Blaklaaa Movement' },
     { name: 'Facebook', href: 'https://www.facebook.com/TheFinestMc', label: '@PMTheFinestMc' },
     { name: 'X', href: 'https://x.com/blaklaaa', label: '@blaklaaa' },
-    { name: 'Instagram', href: 'https://www.instagram.com/blaklaaa', label: '@blaklaaa' },
-    { name: 'LinkedIn', href: socialLinks[5].href, label: 'Blaklaaa Movement' },
   ],
   '/modeling': socialLinks,
 }

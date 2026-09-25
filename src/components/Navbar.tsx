@@ -43,7 +43,7 @@ export default function Navbar() {
       <div className="hidden border-b border-line bg-soft lg:block">
         <div className="site-container flex h-9 items-center justify-between">
           <p className="truncate pr-4 text-[0.72rem] text-muted">{topMessage}</p>
-          <SocialIconLinks links={socials} size="sm" carousel className="gap-3.5" />
+          <SocialIconLinks links={socials} size="sm" className="gap-3.5" />
         </div>
       </div>
 

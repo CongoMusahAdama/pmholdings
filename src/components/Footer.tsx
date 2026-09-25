@@ -163,8 +163,7 @@ export default function Footer() {
                 links={socialLinks}
                 size="md"
                 onDark
-                carousel
-                className="mt-5 w-full max-w-[12rem]"
+                className="mt-5 flex-wrap gap-3"
               />
             </div>
           </div>

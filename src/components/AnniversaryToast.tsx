@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { X } from 'lucide-react'
 
 const ANNIVERSARY = '2026-09-25'
+
+const headlineLines = ["It's Our", '16 Year', 'Anniversary']
+const lineEase = [0.22, 1, 0.36, 1] as const
 
 const collage = [
   { src: '/images/pm4.jpg', x: 30, y: 80 },
@@ -67,6 +70,7 @@ function PhotoSixteen({ className }: { className?: string }) {
 
 export default function AnniversaryToast() {
   const [open, setOpen] = useState(false)
+  const reduceMotion = useReducedMotion()
 
   const close = () => setOpen(false)
 
@@ -115,25 +119,67 @@ export default function AnniversaryToast() {
           </button>
 
           <div className="flex h-full flex-col px-5 pb-3 pt-14 md:flex-row md:items-center md:gap-10 md:px-14 md:py-10 lg:gap-14 lg:px-20">
-            <motion.div
-              className="shrink-0 md:w-[min(34%,26rem)]"
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-gold">
-                25 September
-              </p>
+            <div className="shrink-0 md:w-[min(34%,26rem)]">
+              <motion.p
+                className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-gold"
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.55, ease: lineEase }}
+              >
+                <motion.span
+                  className="inline-block"
+                  animate={reduceMotion ? undefined : { opacity: [1, 0.45, 1] }}
+                  transition={{
+                    duration: 2.4,
+                    delay: 0.7,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
+                >
+                  25 September
+                </motion.span>
+              </motion.p>
               <h2
                 id="anniversary-title"
-                className="mt-3 max-w-[11ch] font-sans text-[2.05rem] font-bold leading-[0.95] tracking-tight text-white sm:text-5xl md:max-w-[12ch] md:text-6xl lg:text-7xl"
+                className="mt-3 font-sans text-[2.05rem] font-bold leading-[0.95] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
               >
-                It’s Our 16 Year Anniversary
+                {headlineLines.map((line, index) => (
+                  <span key={line} className="-my-1 block overflow-hidden py-1">
+                    <motion.span
+                      className="block"
+                      initial={{ y: reduceMotion ? 0 : '115%' }}
+                      animate={{ y: 0 }}
+                      transition={{
+                        duration: 0.85,
+                        delay: reduceMotion ? 0.04 * index : 0.12 + index * 0.14,
+                        ease: lineEase,
+                      }}
+                    >
+                      <motion.span
+                        className="anniversary-sheen block"
+                        animate={reduceMotion ? undefined : { y: [0, -6, 0] }}
+                        transition={{
+                          duration: 2.5,
+                          delay: 1 + index * 0.16,
+                          repeat: Infinity,
+                          ease: 'easeInOut',
+                        }}
+                      >
+                        {line}
+                      </motion.span>
+                    </motion.span>
+                  </span>
+                ))}
               </h2>
-              <p className="mt-3 max-w-sm text-sm font-light leading-snug text-white/75 sm:text-lg md:mt-6 md:max-w-md md:leading-relaxed">
+              <motion.p
+                className="mt-3 max-w-sm text-sm font-light leading-snug text-white/75 sm:text-lg md:mt-6 md:max-w-md md:leading-relaxed"
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.55, ease: lineEase }}
+              >
                 Sixteen years of The Finest MC. The voice, the stages, and a hallmark that still holds.
-              </p>
-            </motion.div>
+              </motion.p>
+            </div>
 
             <div className="flex min-h-0 flex-1 items-end justify-center overflow-hidden md:h-full md:items-center md:justify-end">
               <motion.div
